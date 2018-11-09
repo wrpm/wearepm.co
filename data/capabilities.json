@@ -1,0 +1,121 @@
+[
+  {
+    "title": "Strategy",
+    "list": [{
+        "title": "Discovery & Research",
+        "core": true
+      },
+      {
+        "title": "Brand Strategy",
+        "core": true
+      },
+      {
+        "title": "Content Strategy",
+        "core": true
+      },
+      {
+        "title": "Positioning",
+        "core": false
+      },
+      {
+        "title": "Marketing Campaigns",
+        "core": false
+      }
+    ]
+  },
+  {
+    "title": "Design",
+    "list": [
+      {
+        "title": "Website Design",
+        "core": true
+      },
+      {
+        "title": "User Experience",
+        "core": true
+      },
+      {
+        "title": "User Interface",
+        "core": true
+      },
+      {
+        "title": "Wireframing",
+        "core": true
+      },
+      {
+        "title": "Logo & ID System",
+        "core": false
+      },
+      {
+        "title": "Print & Packaging",
+        "core": false
+      },
+      {
+        "title": "3D Modeling",
+        "core": false
+      }
+    ]
+  },
+  
+  {
+
+    "title": "Content",
+    "list": [
+      {
+        "title": "Copywriting",
+        "core": false
+      },
+      {
+        "title": "Content Strategy",
+        "core": true
+      },
+      {
+        "title": "Social Media",
+        "core": true
+      },
+      {
+        "title": "Illustration",
+        "core": false
+      },
+      {
+        "title": "Iconography",
+        "core": false
+      }
+    ]
+  },
+  {
+    "title": "Development",
+    "list": [{
+        "title": "Website Development",
+        "core": true
+      },
+      {
+        "title": "Web Applications",
+        "core": true
+      },
+      {
+        "title": "Information Architecture",
+        "core": true
+      },
+      {
+        "title": "API Design & Integration",
+        "core": true
+      },
+      {
+        "title": "Server Side Engineering",
+        "core": true
+      },
+      {
+        "title": "CMS & Platform Builds",
+        "core": true
+      }, {
+        "title": "eCommerce",
+        "core": true
+      },
+      {
+        "title": "Prototyping",
+        "core": true
+      }
+    ]
+  }
+]

@@ -83,6 +83,10 @@
   ],
   "link": [
     {
+      "rel": "canonical",
+      "href": "https://wearepm.co"
+    },
+    {
       "hid": "ti-16x16",
       "rel": "icon",
       "type": "image/png",

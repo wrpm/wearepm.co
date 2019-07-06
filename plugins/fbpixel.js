@@ -16,7 +16,7 @@ export default ({ app }) => {
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
 
-  fbq('init', process.env.FACEBOOK_PIXEL_ID);
+  fbq('init', '429596504436683');
   fbq('track', 'PageView');
 
   /*

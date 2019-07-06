@@ -43,7 +43,11 @@ module.exports = {
   plugins: [
     '~plugins/global-components.js',
     '~plugins/filters.js',
-    '~plugins/check-view.js'
+    '~plugins/check-view.js',
+    {
+      src: '~/plugins/fbpixel.js',
+      ssr: false
+    }
   ],
 
   styleResources: {
@@ -74,7 +78,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    analyze: true,
+    // analyze: true,
 
     extractCSS: true,
 

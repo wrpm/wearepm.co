@@ -6,6 +6,7 @@
       class="nav__item">
       <base-button
         :icon="profile.icon"
+        :icon-alt="profile.title"
         :url="profile.url"
         :animation="{delay: 0.3 * index}"
       />

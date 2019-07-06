@@ -1,11 +1,12 @@
 <template>
   <div class="navi">
-    <div 
-      v-for="(item, index) in items" 
-      :key="index" 
+    <div
+      v-for="(item, index) in items"
+      :key="index"
       class="nav__item">
       <base-button
         :icon="item.icon"
+        :icon-alt="item.title"
         :url="item.url"
       />
     </div>

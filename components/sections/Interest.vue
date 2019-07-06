@@ -28,7 +28,9 @@
                 <source
                   srcset="/interest/optimized/realestate@sm.webp"
                   type="image/webp">
-                <img src="/interest/optimized/realestate@sm.jpg" >
+                <img
+                  src="/interest/optimized/realestate@sm.jpg"
+                  alt="Residential building">
               </picture>
             </div>
           </div>
@@ -56,7 +58,9 @@
                 <source
                   srcset="/interest/optimized/configurator@sm.webp"
                   type="image/webp">
-                <img src="/interest/optimized/configurator@sm.jpg" >
+                <img
+                  src="/interest/optimized/configurator@sm.jpg"
+                  alt="Custom build bicycle" >
               </picture>
             </div>
           </div>

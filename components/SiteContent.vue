@@ -1,5 +1,7 @@
 <template>
-  <div class="site-content">
+  <main 
+    class="site-content"
+    role="main">
     <div class="site-content__container">
       <intro />
       <capabilities />
@@ -7,7 +9,7 @@
       <interest />
       <contact />
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

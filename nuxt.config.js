@@ -1,6 +1,6 @@
 const pkg = require('./package')
 // const path = require('path')
-// require('dotenv').config()
+require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -15,7 +15,10 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    htmlAttrs: {
+      lang: 'en'
+    },
+    title: 'WRPM - Digital Creative Agency Belgrade',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -56,9 +59,8 @@ module.exports = {
     '@nuxtjs/style-resources',
     ['@nuxtjs/google-analytics']
   ],
-
   'google-analytics': {
-    id: 'UA-128973205-1'
+    id: process.env.GOOGLE_TRACKING_ID
   },
 
   /*
@@ -72,14 +74,17 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    analyze: true,
+
     extractCSS: true,
+
     optimization: {
       minimize: true,
       splitChunks: {
         chunks: 'all',
-        automaticNameDelimiter: '.',
-        name: undefined,
-        cacheGroups: {}
+        automaticNameDelimiter: '.'
+        // name: undefined,
+        // cacheGroups: {}
       }
     },
 

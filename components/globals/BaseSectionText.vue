@@ -1,10 +1,12 @@
 <template>
-  <p class="section__text" v-html="text" />
+  <p 
+    class="section__text" 
+    v-html="text" />
 </template>
 
 <script>
 export default {
-  name: 'section-text',
+  name: 'SectionText',
   props: {
     text: {
       type: String,

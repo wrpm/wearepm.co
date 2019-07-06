@@ -1,8 +1,22 @@
 {
-  "name": "wrpm-nuxt",
-  "version": "1.0.0",
+  "name": "wearepm.co",
+  "version": "1.0.2",
   "description": "WRPM Corporate Website with Nuxt &amp; Vue",
-  "author": "Nikola Plavsic",
+  "author": {
+    "name": "WRPM",
+    "email": "office@wearepm.co",
+    "url": "https://wearepm.co"
+  },
+  "contributors": [
+    {
+      "name": "Velimir Matic",
+      "email": "velimir.matic@wearepm.co"
+    },
+    {
+      "name": "Nikola Plavsic",
+      "email": "nikola.plavsic@wearepm.co"
+    }
+  ],
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
@@ -14,13 +28,14 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/dotenv": "^1.3.0",
     "@nuxtjs/google-analytics": "^2.0.2",
+    "@nuxtjs/style-resources": "^0.1.2",
     "bootstrap": "^4.1.3",
-    "bootstrap-vue": "^2.0.0-beta",
     "cross-env": "^5.2.0",
     "express": "^4.16.3",
     "gsap": "^2.0.2",
-    "loadash": "^1.0.0",
+    "intersection-observer": "^0.7.0",
     "lodash": "^4.17.11",
     "nuxt": "^2.0.0",
     "nuxt-sass-resources-loader": "^2.0.5",

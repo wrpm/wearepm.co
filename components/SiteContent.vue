@@ -18,7 +18,7 @@ import Interest from '~/components/sections/Interest'
 import Contact from '~/components/sections/Contact'
 
 export default {
-  name: 'site-content',
+  name: 'SiteContent',
   components: {
     Intro,
     Capabilities,
@@ -32,8 +32,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .site-content {
-  
-
   @include media-breakpoint-up(md) {
     padding-left: 80px;
     padding-right: 80px;

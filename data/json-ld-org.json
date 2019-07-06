@@ -1,0 +1,122 @@
+{
+  "@context": {
+    "@vocab": "http://schema.org/"
+  },
+
+  "@graph":[
+    {
+      "@type": "Person",
+      "@id": "https://wearepm.co/#person-np",
+      "name": "Nikola Plavsic",
+      "email": "nikola.plavsic@wearepm.co",
+      "sameAs" : [
+        "https://www.facebook.com/nikolaplavsic87",
+        "https://www.linkedin.com/in/plavsicnikola/",
+        "https://twitter.com/plaximaxi",
+        "https://www.behance.net/nikolaplavsic",
+        "https://github.com/nikolaplavsic"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://wearepm.co/#person-vm",
+      "name": "Velimir Matic",
+      "email": "velimir.matic@wearepm.co",
+      "sameAs" : [
+        "https://www.facebook.com/veljamatic",
+        "https://www.linkedin.com/in/veljamatic/",
+        "https://www.instagram.com/veljamatic/",
+        "https://twitter.com/veljoni",
+        "https://dribbble.com/veljoni",
+        "https://www.behance.net/veljamatic",
+        "https://github.com/veljamatic"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://wearepm.co/#Organization",
+      "url" : "https://wearepm.co",
+      "name": "WRPM",
+      "legalName" : "WRPM DOO",
+      "taxID": 111166323,
+      "address": {
+         "@type": "PostalAddress",
+         "streetAddress": "Gružanska 24",
+         "addressLocality": "Belgrade",
+         "postalCode": "11000",
+         "addressCountry": "Serbia"
+      },
+      "description": "WRPM is an independent web design and development agency that creates progress by designing, building and growing consumer-facing digital solutions crafted to solve unique business challenges.",
+      "logo" : "https://wearepm.co/logo/wrpm-logo@2x.png",
+      "founders": [
+        {
+          "@id": "https://wearepm.co/#person-np"
+        },
+        {
+          "@id": "https://wearepm.co/#person-vm"
+        }
+      ],
+      "sameAs" : [
+        "https://www.linkedin.com/company/wrpm/",
+        "https://www.instagram.com/wearepmco",
+        "https://www.facebook.com/wearepmco",
+        "https://www.behance.net/wrpm",
+        "https://twitter.com/wearepmco",
+        "https://github.com/wrpm"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "additionalType": "http://www.productontology.org/doc/Web_design",
+      "@id": "https://wearepm.co/#ProfessionalService",
+      "parentOrganization": {
+         "@id": "https://wearepm.co/#Organization"
+      },
+      "url" : "https://wearepm.co",
+      "email": "mailto:office@wearepm.co",
+      "telephone": "+381604206043",
+      "name": "WRPM",
+      "address": {
+         "@type": "PostalAddress",
+         "streetAddress": "Bulevar kralja Aleksandra 124",
+         "addressLocality": "Belgrade",
+         "postalCode": "11000",
+         "addressCountry": "Serbia"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 44.8037537,
+        "longitude": 20.4783529
+      },
+      "openingHours": [
+        "Mo-Fr 10:00-18:00"
+      ],
+      "priceRange": "$$$",
+      "image": "https://wearepm.co/logo/wrpm-logo@2x.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://wearepm.co/#website",
+      "url": "https://wearepm.co/",
+      "name": "WRPM",
+      "publisher": {
+        "@id": "https://wearepm.co/#Organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://wearepm.co/#webpage",
+      "url": "https://wearepm.co/",
+      "inLanguage": "en-US",
+      "name": "WRPM - Digital Creative Agency Belgrade",
+      "isPartOf": {
+        "@id":"https://wearepm.co/#website"
+      },
+      "about": {
+        "@id":"https://wearepm.co/#Organization"
+      },
+      "datePublished":"2018-06-25T14:00:22+00:00",
+      "dateModified":"2019-06-16T21:00:00+00:00"
+    }
+  ]
+}

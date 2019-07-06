@@ -1,10 +1,13 @@
 <template>
-  <h2 class="section__title" ref="title" v-html="title" />
+  <h2 
+    ref="title" 
+    class="section__title" 
+    v-html="title" />
 </template>
 
 <script>
 export default {
-  name: 'section-title',
+  name: 'SectionTitle',
   props: {
     title: {
       type: String,

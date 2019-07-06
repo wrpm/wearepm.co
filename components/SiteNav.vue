@@ -1,18 +1,21 @@
 <template>
   <div class="navi">
-    <div class="nav__item" v-for="(item, index) in items" :key="index">
+    <div 
+      v-for="(item, index) in items" 
+      :key="index" 
+      class="nav__item">
       <base-button
         :icon="item.icon"
         :url="item.url"
-        />
+      />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'site-nav',
-  data () {
+  name: 'SiteNav',
+  data() {
     return {
       items: [
         {
@@ -41,7 +44,7 @@ $navItemWidth: 40px;
   margin-top: -2px;
 
   &:first-child {
-    margin-top: 0
+    margin-top: 0;
   }
 }
 </style>

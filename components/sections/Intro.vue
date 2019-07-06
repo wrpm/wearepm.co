@@ -1,28 +1,39 @@
 <template>
-  <div class="intro" v-view.once="onceInViewHandler">
+  <div 
+    v-view.once="onceInViewHandler" 
+    class="intro">
     <div class="intro__wrapper">
-      <base-section-label :label="overline" ref="label">
-        <small class="line muted" ref="labelSmall">
+      <base-section-label 
+        ref="label" 
+        :label="overline">
+        <small 
+          ref="labelSmall" 
+          class="line muted">
           or short <abbr title="We Are PM">WRPM</abbr> (pronounced /wi ɑr ˈpiˈɛm/)
         </small>
       </base-section-label>
-      <h1 class="intro__title" ref="title">
+      <h1 
+        ref="title" 
+        class="intro__title">
         <span class="line">Strategy.</span>
         <span class="line">Design.</span>
         <span class="line red">Development.</span>
       </h1>
-      <p class="intro__text" ref="description" v-html="text" />
+      <p 
+        ref="description" 
+        class="intro__text" 
+        v-html="text" />
     </div>
   </div>
 </template>
 
 <script>
-import {TimelineMax} from 'gsap'
+import { TimelineMax } from 'gsap'
 
 export default {
-  name: 'intro',
+  name: 'Intro',
 
-  data () {
+  data() {
     return {
       overline: 'Hello, We Are PM',
       title: 'Digital Agency',
@@ -30,13 +41,13 @@ export default {
     }
   },
 
-  mounted () {
+  mounted() {
     this.initAnimation()
     this.playAnimation()
   },
 
   methods: {
-    initAnimation () {
+    initAnimation() {
       const self = this
 
       const titleLines = self.$refs.title.querySelectorAll('.line')
@@ -52,29 +63,39 @@ export default {
       self.$timeline = new TimelineMax({ paused: true, delay: 0.7 })
 
       self.$timeline
-        .staggerFrom(els, 0.8, {
-          y: 40,
-          autoAlpha: 0,
-          ease: 'Power1.easeOut',
-          clearProps: 'all'
-        }, 0.15)
-        .from(self.$refs.label.$refs.line, 0.5, {
-          scaleX: 0,
-          ease: 'Power1.easeOut',
-          onStart: function () {
-            this.target.style.transformOrigin = 'left center'
+        .staggerFrom(
+          els,
+          0.8,
+          {
+            y: 40,
+            autoAlpha: 0,
+            ease: 'Power1.easeOut',
+            clearProps: 'all'
           },
-          onComplete: function () {
-            this.target.removeAttribute('style')
-          }
-        }, 0.4)
+          0.15
+        )
+        .from(
+          self.$refs.label.$refs.line,
+          0.5,
+          {
+            scaleX: 0,
+            ease: 'Power1.easeOut',
+            onStart: function() {
+              this.target.style.transformOrigin = 'left center'
+            },
+            onComplete: function() {
+              this.target.removeAttribute('style')
+            }
+          },
+          0.4
+        )
     },
 
-    playAnimation () {
+    playAnimation() {
       this.$timeline.play()
     },
 
-    onceInViewHandler () {
+    onceInViewHandler() {
       this.playAnimation()
     }
   }
@@ -129,5 +150,4 @@ export default {
     }
   }
 }
-
 </style>

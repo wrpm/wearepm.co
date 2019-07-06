@@ -1,0 +1,22 @@
+[
+  {
+    "hid": "msapplication-square70x70logo",
+    "name": "msapplication-square70x70logo",
+    "content": "/favicon/smalltile.png"
+  },
+  {
+    "hid": "msapplication-square150x150logo",
+    "name": "msapplication-square150x150logo",
+    "content": "/favicon/mediumtile.png"
+  },
+  {
+    "hid": "msapplication-wide310x150logo",
+    "name": "msapplication-wide310x150logo",
+    "content": "/favicon/widetile.png"
+  },
+  {
+    "hid": "msapplication-square310x310logo",
+    "name": "msapplication-square310x310logo",
+    "content": "/favicon/largetile.png"
+  }
+]

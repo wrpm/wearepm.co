@@ -1,24 +1,33 @@
 <template>
   <div class="release">
     <span class="release__title">Digital release</span>
-    <span class="release__date">July 2018.</span>
-    <span class="release__version">{{version}}</span>
+    <span class="release__date">{{ month }} {{ year }}.</span>
+    <span class="release__version">{{ version }}</span>
   </div>
 </template>
 
 <script>
-import {TweenMax} from 'gsap'
+import { TweenMax } from 'gsap'
+import pkg from '@/package'
 
 export default {
-  name: 'release',
+  name: 'Release',
 
-  data () {
-    return {
-      version: '1.0.1'
+  data: () => ({}),
+
+  computed: {
+    version() {
+      return pkg.version
+    },
+    year() {
+      return 2019
+    },
+    month() {
+      return 'June'
     }
   },
 
-  mounted () {
+  mounted() {
     // this.initAnimation()
     this.$nextTick(() => {
       this.initAnimation()
@@ -26,12 +35,17 @@ export default {
   },
 
   methods: {
-    initAnimation () {
-      TweenMax.staggerFrom(this.$el.querySelectorAll('span'), 0.8, {
-        opacity: 0,
-        y: 20,
-        delay: 0.4
-      }, 0.3)
+    initAnimation() {
+      TweenMax.staggerFrom(
+        this.$el.querySelectorAll('span'),
+        0.8,
+        {
+          opacity: 0,
+          y: 20,
+          delay: 0.4
+        },
+        0.3
+      )
     }
   }
 }

@@ -1,0 +1,32 @@
+[
+  {
+    "hid": "twitter:card",
+    "property": "twitter:card",
+    "content": "summary_large_image"
+  },
+  {
+    "hid": "twitter:title",
+    "property": "twitter:title",
+    "content": "WRPM - Digital Creative Agency Belgrade"
+  },
+  {
+    "hid": "twitter:description",
+    "property": "twitter:description",
+    "content": "WRPM is an independent web design and development agency that creates progress by designing, building and growing consumer-facing digital solutions crafted to solve unique business challenges."
+  },
+  {
+    "hid": "twitter:site",
+    "property": "twitter:site",
+    "content": "@wearepmco"
+  },
+  {
+    "hid": "twitter:image",
+    "property": "twitter:image",
+    "content": "https://wearepm.co/og/wrpm-og-image-min.png"
+  },
+  {
+    "hid": "twitter:creator",
+    "property": "twitter:creator",
+    "content": "@wearepmco"
+  }
+]

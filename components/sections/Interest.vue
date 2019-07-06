@@ -1,29 +1,63 @@
 <template>
-  <section class="interest" v-view.once="onceInViewHandler">
+  <section
+    v-view.once="onceInViewHandler"
+    class="interest">
     <div class="interest__wrapper">
-      <base-section-label :label="overline" ref="label"/>
-      <base-section-title :title="title" ref="title" />
-      <base-section-text :text="text" ref="description" />
+      <base-section-label
+        ref="label"
+        :label="overline"/>
+      <base-section-title
+        ref="title"
+        :title="title" />
+      <base-section-text
+        ref="description"
+        :text="text" />
       <div class="interest__content">
         <div class="project-box row">
           <div class="col-lg-6 project-box--column">
             <div class="col-media col-media--top">
-              <img src="~/static/interest/optimized/real-estate-03-bw-min.jpg" />
+              <picture>
+                <source
+                  srcset="/interest/optimized/realestate.webp"
+                  type="image/webp"
+                  media="(min-width: 800px)">
+                <source
+                  srcset="/interest/optimized/realestate.jpg"
+                  type="image/jpg"
+                  media="(min-width: 800px)">
+                <source
+                  srcset="/interest/optimized/realestate@sm.webp"
+                  type="image/webp">
+                <img src="/interest/optimized/realestate@sm.jpg" >
+              </picture>
             </div>
           </div>
           <div class="col-lg-6 project-box--column">
             <div class="col-content">
               <span class="label">Project</span>
-              <h3 class="title">Real Estate /<br/>Property <br>Development</h3>
+              <h3 class="title">Real Estate /<br>Property <br>Development</h3>
               <p class="text">We are extremely interested to work with property developers and real estate agencies on industry leading digital realty presentations.</p>
             </div>
           </div>
         </div>
         <div class="project-box row align-items-strech">
-          
+
           <div class="col-lg-6 order-lg-2 project-box--column">
             <div class="col-media">
-              <img src="~/static/interest/optimized/configurator-01-min.jpg" />
+              <picture>
+                <source
+                  srcset="/interest/optimized/configurator.webp"
+                  type="image/webp"
+                  media="(min-width: 800px)">
+                <source
+                  srcset="/interest/optimized/configurator.jpg"
+                  type="image/jpg"
+                  media="(min-width: 800px)">
+                <source
+                  srcset="/interest/optimized/configurator@sm.webp"
+                  type="image/webp">
+                <img src="/interest/optimized/configurator@sm.jpg" >
+              </picture>
             </div>
           </div>
 
@@ -35,18 +69,18 @@
             </div>
           </div>
         </div>
-        <div class="stripes"></div>
+        <div class="stripes"/>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import {TimelineMax} from 'gsap'
+import { TimelineMax } from 'gsap'
 
 export default {
-  name: 'interest',
-  data () {
+  name: 'Interest',
+  data() {
     return {
       overline: 'What are we looking for?',
       title: 'Projects of<br/> interest in 2019',
@@ -54,12 +88,12 @@ export default {
     }
   },
 
-  mounted () {
+  mounted() {
     this.initAnimation()
   },
 
   methods: {
-    initAnimation () {
+    initAnimation() {
       const self = this
 
       const els = [
@@ -71,29 +105,39 @@ export default {
       self.$timeline = new TimelineMax({ paused: true, delay: 0.7 })
 
       self.$timeline
-        .staggerFrom(els, 0.8, {
-          y: 40,
-          autoAlpha: 0,
-          ease: 'Power1.easeOut',
-          clearProps: 'all'
-        }, 0.15)
-        .from(self.$refs.label.$refs.line, 0.5, {
-          scaleX: 0,
-          ease: 'Power1.easeOut',
-          onStart: function () {
-            this.target.style.transformOrigin = 'left center'
+        .staggerFrom(
+          els,
+          0.8,
+          {
+            y: 40,
+            autoAlpha: 0,
+            ease: 'Power1.easeOut',
+            clearProps: 'all'
           },
-          onComplete: function () {
-            this.target.removeAttribute('style')
-          }
-        }, 0.4)
+          0.15
+        )
+        .from(
+          self.$refs.label.$refs.line,
+          0.5,
+          {
+            scaleX: 0,
+            ease: 'Power1.easeOut',
+            onStart: function() {
+              this.target.style.transformOrigin = 'left center'
+            },
+            onComplete: function() {
+              this.target.removeAttribute('style')
+            }
+          },
+          0.4
+        )
     },
 
-    playAnimation () {
+    playAnimation() {
       this.$timeline.play()
     },
 
-    onceInViewHandler () {
+    onceInViewHandler() {
       this.playAnimation()
     }
   }
@@ -239,7 +283,6 @@ export default {
       max-width: 75%;
     }
   }
-
 }
 
 .stripes {
@@ -272,11 +315,10 @@ export default {
 
 @keyframes barberpole-body-case {
   from {
-    background-position: 0 0
+    background-position: 0 0;
   }
   to {
-    background-position: 40px 0px
+    background-position: 40px 0px;
   }
 }
-
 </style>

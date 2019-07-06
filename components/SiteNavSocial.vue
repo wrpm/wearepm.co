@@ -1,20 +1,23 @@
 <template>
   <div class="navi">
-    <div class="nav__item" v-for="(profile, index) in profiles" :key="index">
+    <div
+      v-for="(profile, index) in profiles"
+      :key="index"
+      class="nav__item">
       <base-button
         :icon="profile.icon"
         :url="profile.url"
         :animation="{delay: 0.3 * index}"
-        />
+      />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'site-nav-social',
+  name: 'SiteNavSocial',
   computed: {
-    profiles () {
+    profiles() {
       return this.$store.getters.socialProfiles
     }
   }
@@ -40,7 +43,7 @@ $navItemWidth: 40px;
   margin-left: -2px;
 
   &:first-child {
-    margin-left: 0
+    margin-left: 0;
   }
 
   @include media-breakpoint-up(md) {
@@ -48,7 +51,7 @@ $navItemWidth: 40px;
     margin-top: -2px;
 
     &:first-child {
-      margin-top: 0
+      margin-top: 0;
     }
   }
 }

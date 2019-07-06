@@ -1,0 +1,30 @@
+[
+  {
+    "@type": "Person",
+    "@id": "https://wearepm.co/#person-np",
+    "name": "Nikola Plavsic",
+    "email": "nikola.plavsic@wearepm.co",
+    "sameAs" : [
+      "https://www.facebook.com/nikolaplavsic87",
+      "https://www.linkedin.com/in/plavsicnikola/",
+      "https://twitter.com/plaximaxi",
+      "https://www.behance.net/nikolaplavsic",
+      "https://github.com/nikolaplavsic"
+    ]
+  },
+  {
+    "@type": "Person",
+    "@id": "https://wearepm.co/#person-vm",
+    "name": "Velimir Matic",
+    "email": "velimir.matic@wearepm.co",
+    "sameAs" : [
+      "https://www.facebook.com/veljamatic",
+      "https://www.linkedin.com/in/veljamatic/",
+      "https://www.instagram.com/veljamatic/",
+      "https://twitter.com/veljoni",
+      "https://dribbble.com/veljoni",
+      "https://www.behance.net/veljamatic",
+      "https://github.com/veljamatic"
+    ]
+  },
+]

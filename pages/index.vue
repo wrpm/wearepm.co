@@ -1,35 +1,50 @@
 <template>
-  <div id="app">
-    <site-header/>
-    <site-content/>
+  <div class="page page--index">
+    <SiteHeader />
+    <SiteContent />
   </div>
 </template>
 
 <script>
-import SiteHeader from '~/components/SiteHeader'
-import SiteContent from '~/components/SiteContent'
-import headMeta from '~/data/head-meta.json'
+import SiteHeader from '@/components/SiteHeader'
+import SiteContent from '@/components/SiteContent'
+import pageHeadMixin from '@/mixins/pageHeadMixin'
 
 export default {
+  name: 'Index',
   components: {
     SiteHeader,
     SiteContent
   },
-  head: headMeta
+  mixins: [pageHeadMixin],
+  head: {
+    title: 'WRPM - Digital Creative Agency Belgrade',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'We are a group of talented creatives and developers who come together to design, build and grow consumer-facing digital solutions crafted to solve unique business challenges.'
+      }
+    ],
+    link: [
+      {
+        hid: 'canonical',
+        rel: 'canonical',
+        href: 'https://wearepm.co'
+      }
+    ]
+  }
 }
 </script>
 
 <style lang="scss">
-* {
-  box-sizing: border-box;
-}
-
 body {
   background-color: $body-background;
   margin: 0;
 }
 
-#app {
+.page--index {
   display: flex;
   flex-direction: column;
   width: 100%;

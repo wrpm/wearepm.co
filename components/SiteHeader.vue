@@ -24,14 +24,14 @@ import SiteNavSocial from '~/components/SiteNavSocial'
 import Release from '~/components/Release'
 
 export default {
-  name: 'site-header',
+  name: 'SiteHeader',
   components: {
     Logo,
     SiteNav,
     SiteNavSocial,
     Release
   },
-  data () {
+  data() {
     return {}
   }
 }

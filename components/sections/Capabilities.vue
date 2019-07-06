@@ -1,16 +1,24 @@
 <template>
-  <div class="capabilities" v-view.once="onceInViewHandler">
+  <div 
+    v-view.once="onceInViewHandler" 
+    class="capabilities">
     <div class="capabilities__wrapper">
-      <base-section-label :label="overline" ref="label"/>
-      <base-section-title :title="title" ref="title" />
-      <base-section-text :text="text" ref="description" />
+      <base-section-label 
+        ref="label" 
+        :label="overline"/>
+      <base-section-title 
+        ref="title" 
+        :title="title" />
+      <base-section-text 
+        ref="description" 
+        :text="text" />
       <div class="capabilities__list">
         <div class="row">
           <!-- <div class="col-md-4"></div> -->
           <div 
-            class="col-md-6 col-lg-3 capabilities__list-group" 
             v-for="(capabilityGroup, index) in capabilities" 
-            :key="index">
+            :key="index" 
+            class="col-md-6 col-lg-3 capabilities__list-group">
 
             <capability-list :group="capabilityGroup" />
           </div>
@@ -22,30 +30,31 @@
 
 <script>
 import CapabilityList from '~/components/CapabilityList'
-import {TimelineMax} from 'gsap'
+import { TimelineMax } from 'gsap'
 
 export default {
-  name: 'capabilities',
+  name: 'Capabilities',
   components: {
     CapabilityList
   },
-  data () {
+  data() {
     return {
       overline: 'What does WRPM do?',
       title: 'Our Services & Capabilities',
-      text: 'Our talented creatives and developers come together to design and build consumer-facing digital solutions crafted to solve unique business challenges'
+      text:
+        'Our talented creatives and developers come together to design and build consumer-facing digital solutions crafted to solve unique business challenges'
     }
   },
   computed: {
-    capabilities () {
+    capabilities() {
       return this.$store.getters.capabilities
     }
   },
-  mounted () {
+  mounted() {
     this.initAnimation()
   },
   methods: {
-    initAnimation () {
+    initAnimation() {
       const self = this
 
       const els = [
@@ -57,29 +66,39 @@ export default {
       self.$timeline = new TimelineMax({ paused: true, delay: 0.7 })
 
       self.$timeline
-        .staggerFrom(els, 0.8, {
-          y: 40,
-          autoAlpha: 0,
-          ease: 'Power1.easeOut',
-          clearProps: 'all'
-        }, 0.15)
-        .from(self.$refs.label.$refs.line, 0.5, {
-          scaleX: 0,
-          ease: 'Power1.easeOut',
-          onStart: function () {
-            this.target.style.transformOrigin = 'left center'
+        .staggerFrom(
+          els,
+          0.8,
+          {
+            y: 40,
+            autoAlpha: 0,
+            ease: 'Power1.easeOut',
+            clearProps: 'all'
           },
-          onComplete: function () {
-            this.target.removeAttribute('style')
-          }
-        }, 0.4)
+          0.15
+        )
+        .from(
+          self.$refs.label.$refs.line,
+          0.5,
+          {
+            scaleX: 0,
+            ease: 'Power1.easeOut',
+            onStart: function() {
+              this.target.style.transformOrigin = 'left center'
+            },
+            onComplete: function() {
+              this.target.removeAttribute('style')
+            }
+          },
+          0.4
+        )
     },
 
-    playAnimation () {
+    playAnimation() {
       this.$timeline.play()
     },
 
-    onceInViewHandler (e) {
+    onceInViewHandler(e) {
       this.playAnimation()
     }
   }
@@ -135,7 +154,7 @@ export default {
     transition: color 0.4s linear;
 
     &:not(.core) {
-      color: rgba($body-color, 0.60);
+      color: rgba($body-color, 0.6);
     }
 
     &.hide {
@@ -143,5 +162,4 @@ export default {
     }
   }
 }
-
 </style>

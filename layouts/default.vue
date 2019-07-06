@@ -1,14 +1,30 @@
 <template>
-  <div>
+  <div
+    id="app"
+    :class="{ loaded: didLoad }">
     <nuxt/>
   </div>
 </template>
 
-<style>
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+<script>
+export default {
+  data: () => ({
+    didLoad: false
+  }),
+
+  mounted() {
+    this.didLoad = true
+  }
+}
+</script>
+
+<style lang="scss">
+#app {
+  position: relative;
+  display: none;
+
+  &.loaded {
+    display: block;
+  }
 }
 </style>

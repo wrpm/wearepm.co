@@ -3,22 +3,27 @@
     <div class="row">
       <div class="col-md-4 col--list">
         <ol class="process-list">
-          <li class="process-list__item"
+          <li 
             v-for="(step, index) in steps"
-            :key="index" 
-            v-on:click.prevent="setActiveStepIndex(index)"
-            :class="{active: index === activeStepIndex}">
+            :key="index"
+            :class="{active: index === activeStepIndex}" 
+            class="process-list__item"
+            @click.prevent="setActiveStepIndex(index)">
             <span class="process-list__item__index">{{ index + 1 | padNumber }}</span>
             <span class="process-list__item__text">{{ step.title }}</span>
           </li>
         </ol>
       </div>
       <div class="col-md-8 col--content">
-        <transition-group name="step" tag="div" class="steps">
-          <div class="step"
+        <transition-group 
+          name="step" 
+          tag="div" 
+          class="steps">
+          <div 
             v-for="(step, index) in steps"
+            v-if="index === activeStepIndex"
             :key="step.title"
-            v-if="index === activeStepIndex">
+            class="step">
             <h3 class="step__title">{{ activeStep.title }}</h3>
             <p class="step__text"> {{ activeStep.text }}</p>
           </div>
@@ -31,17 +36,17 @@
 <script>
 // import {TimelineMax} from 'gsap'
 export default {
-  name: 'process-list',
-  data () {
+  name: 'ProcessList',
+  data() {
     return {
       activeStepIndex: 0
     }
   },
   computed: {
-    steps () {
+    steps() {
       return this.$store.getters.processSteps
     },
-    activeStep () {
+    activeStep() {
       const step = this.steps[this.activeStepIndex]
       const index = this.activeStepIndex + 1
       return {
@@ -50,9 +55,9 @@ export default {
       }
     }
   },
-  mounted () {},
+  mounted() {},
   methods: {
-    setActiveStepIndex (index) {
+    setActiveStepIndex(index) {
       this.activeStepIndex = index
     }
   }
@@ -92,7 +97,7 @@ export default {
   cursor: pointer;
 
   &.active {
-    color: rgba($body-color, 1)
+    color: rgba($body-color, 1);
   }
 }
 
@@ -107,8 +112,6 @@ export default {
 }
 
 .step {
-  
-
   @include media-breakpoint-up(md) {
     position: absolute;
     left: 0;
@@ -119,7 +122,7 @@ export default {
     transition: all 0.6s ease-out 0.5s;
   }
 
-  &.step-enter  {
+  &.step-enter {
     transform: translateY(1rem);
     opacity: 0;
   }
@@ -128,7 +131,7 @@ export default {
     transition: all 0.3s ease-in;
   }
 
-  &.step-leave-to  {
+  &.step-leave-to {
     opacity: 0;
   }
 }

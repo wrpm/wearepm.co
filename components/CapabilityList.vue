@@ -5,7 +5,7 @@
       <li
         v-for="(item, index) in group.list"
         :key="index"
-        :class="{ core: item.core, hide: showCoreOnly && !item.core  }">
+        :class="{ core: item.core, hide: showCoreOnly && !item.core }">
         {{ item.title }}
       </li>
     </ul>
@@ -14,19 +14,19 @@
 
 <script>
 export default {
-  name: 'capability-list',
-  data () {
-    return {
-      showCoreOnly: false
-    }
-  },
+  name: 'CapabilityList',
   props: {
     group: {
       type: Object,
       required: true
     }
   },
-  mounted () {},
+  data() {
+    return {
+      showCoreOnly: false
+    }
+  },
+  mounted() {},
   methods: {}
 }
 </script>
@@ -48,7 +48,7 @@ export default {
     transition: color 0.4s linear;
 
     &:not(.core) {
-      color: rgba($body-color, 0.60);
+      color: rgba($body-color, 0.6);
     }
 
     &.hide {

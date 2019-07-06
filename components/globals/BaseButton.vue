@@ -1,23 +1,33 @@
 <template>
-  <a class="button" :href="url" target="_blank" rel="noopener nofollow">
-    <svg width="60" height="60" viewBox="0 0 100 100" class="svg">
-      <path d="M 100,0 L 100,100,0,100,0,0 Z" fill="none" class="svg__border" ref="svgBorder"></path>
+  <a 
+    :href="url" 
+    class="button" 
+    target="_blank" 
+    rel="noopener nofollow">
+    <svg 
+      width="60" 
+      height="60" 
+      viewBox="0 0 100 100" 
+      class="svg">
+      <path 
+        ref="svgBorder" 
+        d="M 100,0 L 100,100,0,100,0,0 Z" 
+        fill="none" 
+        class="svg__border"/>
     </svg>
-    <img :src="iconUrl" class="icon" ref="icon" :alt="iconAlt"/>
+    <img 
+      ref="icon" 
+      :src="iconUrl" 
+      :alt="iconAlt" 
+      class="icon">
   </a>
 </template>
 
 <script>
-import {TimelineMax} from 'gsap'
+import { TimelineMax } from 'gsap'
 
 export default {
-  name: 'base-button',
-
-  data () {
-    return {
-      animationCompleted: false
-    }
-  },
+  name: 'BaseButton',
 
   props: {
     icon: {
@@ -34,7 +44,7 @@ export default {
     },
     animation: {
       type: Object,
-      default () {
+      default() {
         return {
           paused: true,
           delay: 0
@@ -43,19 +53,25 @@ export default {
     }
   },
 
-  computed: {
-    iconUrl () {
-      return '/icons/' + this.icon;
+  data() {
+    return {
+      animationCompleted: false
     }
   },
 
-  mounted () {
+  computed: {
+    iconUrl() {
+      return '/icons/' + this.icon
+    }
+  },
+
+  mounted() {
     this.initAnimation()
     this.playAnimation()
   },
 
   methods: {
-    initAnimation () {
+    initAnimation() {
       let self = this
 
       const timelineOptions = {
@@ -77,18 +93,23 @@ export default {
           ease: 'Power1.easeInOut',
           clearProps: 'all'
         })
-        .from(self.$refs.icon, 0.6, {
-          scale: 0.3,
-          opacity: 0,
-          clearProps: 'all'
-        }, 1)
+        .from(
+          self.$refs.icon,
+          0.6,
+          {
+            scale: 0.3,
+            opacity: 0,
+            clearProps: 'all'
+          },
+          1
+        )
     },
 
-    playAnimation () {
+    playAnimation() {
       this.$timeline.play()
     },
 
-    onAnimationComplete () {
+    onAnimationComplete() {
       this.animationCompleted = true
     }
   }
@@ -121,7 +142,7 @@ $iconSize: 12px;
     height: 100%;
     stroke-width: 10px;
     stroke: #909090;
-    transition: stroke .25s;
+    transition: stroke 0.25s;
     stroke-dasharray: 400px;
     stroke-dashoffset: 0px;
   }
@@ -141,5 +162,4 @@ $iconSize: 12px;
     }
   }
 }
-
 </style>

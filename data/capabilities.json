@@ -6,20 +6,12 @@
         "core": true
       },
       {
-        "title": "Brand Strategy",
+        "title": "Digital Marketing",
         "core": true
       },
       {
         "title": "Content Strategy",
         "core": true
-      },
-      {
-        "title": "Positioning",
-        "core": false
-      },
-      {
-        "title": "Marketing Campaigns",
-        "core": false
       }
     ]
   },
@@ -31,55 +23,20 @@
         "core": true
       },
       {
-        "title": "User Experience",
+        "title": "UI / UX Design",
         "core": true
       },
       {
-        "title": "User Interface",
+        "title": "Logo & Branding",
         "core": true
-      },
-      {
-        "title": "Wireframing",
-        "core": true
-      },
-      {
-        "title": "Logo & ID System",
-        "core": false
       },
       {
         "title": "Print & Packaging",
-        "core": false
-      },
-      {
-        "title": "3D Modeling",
-        "core": false
-      }
-    ]
-  },
-  
-  {
-
-    "title": "Content",
-    "list": [
-      {
-        "title": "Copywriting",
-        "core": false
-      },
-      {
-        "title": "Content Strategy",
-        "core": true
-      },
-      {
-        "title": "Social Media",
         "core": true
       },
       {
         "title": "Illustration",
-        "core": false
-      },
-      {
-        "title": "Iconography",
-        "core": false
+        "core": true
       }
     ]
   },
@@ -114,6 +71,19 @@
       },
       {
         "title": "Prototyping",
+        "core": true
+      }
+    ]
+  },
+  {
+    "title": "Content",
+    "list": [
+      {
+        "title": "Copywriting",
+        "core": true
+      },
+      {
+        "title": "Social Media",
         "core": true
       }
     ]

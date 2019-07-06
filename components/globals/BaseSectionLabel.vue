@@ -1,15 +1,19 @@
 <template>
   <div class="section__label">
-    <span class="line" ref="text">{{label}}</span>
+    <span 
+      ref="text" 
+      class="line">{{ label }}</span>
     <slot />
-    <span class="section__label__line" ref="line"></span>
+    <span 
+      ref="line" 
+      class="section__label__line"/>
   </div>
 </template>
 
 <script>
 // import {TimelineMax} from 'gsap'
 export default {
-  name: 'section-label',
+  name: 'SectionLabel',
   props: {
     label: {
       type: String,
@@ -23,7 +27,7 @@ export default {
 .section__label {
   display: block;
   position: relative;
-  font-family: Montserrat,Helvetica,Arial,sans-serif;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -56,5 +60,4 @@ export default {
   border: 1px solid $body-color;
   width: 30px;
 }
-
 </style>

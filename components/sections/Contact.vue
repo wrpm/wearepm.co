@@ -1,42 +1,64 @@
 <template>
-  <div class="contact" v-view.once="onceInViewHandler" >
+  <div 
+    v-view.once="onceInViewHandler" 
+    class="contact" >
     <div class="contact__wrapper">
-      <base-section-label :label="overline" ref="label"/>
-      <base-section-title :title="title" ref="title" />
-      <base-section-text :text="text" ref="description" />
+      <base-section-label 
+        ref="label" 
+        :label="overline"/>
+      <base-section-title 
+        ref="title" 
+        :title="title" />
+      <base-section-text 
+        ref="description" 
+        :text="text" />
     </div>
     <div class="section__content">
-      <a href="mailto:office@wearepm.co" class="c-watch_title_wrapper">
+      <a 
+        href="mailto:office@wearepm.co" 
+        class="c-watch_title_wrapper">
         <span class="c-watch_title -main">
-        {{ctaText}}
+          {{ ctaText }}
         </span>
-        <span class="c-watch_title -delayed" data-speed="3.1" data-position="middle" style="transform: translate3d(0px, 42.16px, 0px);">
-        {{ctaText}}
+        <span 
+          class="c-watch_title -delayed" 
+          data-speed="3.1" 
+          data-position="middle" 
+          style="transform: translate3d(0px, 42.16px, 0px);">
+          {{ ctaText }}
         </span>
-        <span class="c-watch_title -delayed" data-speed="2.3" data-position="middle" style="transform: translate3d(0px, 31.28px, 0px);">
-        {{ctaText}}
+        <span 
+          class="c-watch_title -delayed" 
+          data-speed="2.3" 
+          data-position="middle" 
+          style="transform: translate3d(0px, 31.28px, 0px);">
+          {{ ctaText }}
         </span>
-        <span class="c-watch_title -delayed" data-speed="1.3" data-position="middle" style="transform: translate3d(0px, 17.68px, 0px);">
-        {{ctaText}}
+        <span 
+          class="c-watch_title -delayed" 
+          data-speed="1.3" 
+          data-position="middle" 
+          style="transform: translate3d(0px, 17.68px, 0px);">
+          {{ ctaText }}
         </span>
       </a>
     </div>
     <div class="section__footer">
       <div class="help">
-      <p>Click "touch" and say hi.</p>
-      <p>Follow us on Instagram, Facebook, or LinkedIn to stay up to date.</p>
+        <p>Click "touch" and say hi.</p>
+        <p>Follow us on Instagram, Facebook, or LinkedIn to stay up to date.</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import {TimelineMax} from 'gsap'
+import { TimelineMax } from 'gsap'
 
 export default {
-  name: 'contact',
+  name: 'Contact',
 
-  data () {
+  data() {
     return {
       overline: 'Contact',
       title: 'Get in',
@@ -45,12 +67,12 @@ export default {
     }
   },
 
-  mounted () {
+  mounted() {
     this.initAnimation()
   },
 
   methods: {
-    initAnimation () {
+    initAnimation() {
       const self = this
 
       const els = [
@@ -62,29 +84,39 @@ export default {
       self.$timeline = new TimelineMax({ paused: true, delay: 0.7 })
 
       self.$timeline
-        .staggerFrom(els, 0.8, {
-          y: 40,
-          autoAlpha: 0,
-          ease: 'Power1.easeOut',
-          clearProps: 'all'
-        }, 0.15)
-        .from(self.$refs.label.$refs.line, 0.5, {
-          scaleX: 0,
-          ease: 'Power1.easeOut',
-          onStart: function () {
-            this.target.style.transformOrigin = 'left center'
+        .staggerFrom(
+          els,
+          0.8,
+          {
+            y: 40,
+            autoAlpha: 0,
+            ease: 'Power1.easeOut',
+            clearProps: 'all'
           },
-          onComplete: function () {
-            this.target.removeAttribute('style')
-          }
-        }, 0.4)
+          0.15
+        )
+        .from(
+          self.$refs.label.$refs.line,
+          0.5,
+          {
+            scaleX: 0,
+            ease: 'Power1.easeOut',
+            onStart: function() {
+              this.target.style.transformOrigin = 'left center'
+            },
+            onComplete: function() {
+              this.target.removeAttribute('style')
+            }
+          },
+          0.4
+        )
     },
 
-    playAnimation () {
+    playAnimation() {
       this.$timeline.play()
     },
 
-    onceInViewHandler () {
+    onceInViewHandler() {
       this.playAnimation()
     }
   }
@@ -140,7 +172,7 @@ export default {
 
 .c-watch_title {
   display: block;
-  line-height: .75;
+  line-height: 0.75;
   margin-bottom: 0;
   background-color: #000;
   pointer-events: none;
@@ -180,7 +212,7 @@ export default {
 }
 .section__content {
   padding: 1rem 0 6rem;
-  
+
   @include media-breakpoint-up(md) {
     padding: 2rem 0 8rem;
   }
@@ -197,5 +229,4 @@ export default {
     line-height: 1.4;
   }
 }
-
 </style>

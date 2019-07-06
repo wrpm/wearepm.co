@@ -1,7 +1,15 @@
 const pkg = require('./package')
+// const path = require('path')
+// require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
+
+  // server: {
+  //   port: process.env.APP_PORT, // default: 3000
+  //   host: process.env.APP_HOST // default: localhost
+  //   // timing: process.env.TIMING_HEADER
+  // },
 
   /*
   ** Headers of the page
@@ -10,10 +18,9 @@ module.exports = {
     title: pkg.name,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' }]
   },
 
   /*
@@ -24,7 +31,8 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~assets/scss/index.scss'],
+  // css: ['~assets/scss/index.scss'],
+  css: ['@/assets/scss/app.scss'],
 
   /*
   ** Plugins to load before mounting the App
@@ -35,15 +43,17 @@ module.exports = {
     '~plugins/check-view.js'
   ],
 
+  styleResources: {
+    scss: ['~assets/scss/design.scss']
+  },
+
   /*
   ** Nuxt.js modules
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
-    // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt',
-    ['nuxt-sass-resources-loader', ['assets/scss/index.scss']],
+    '@nuxtjs/style-resources',
     ['@nuxtjs/google-analytics']
   ],
 
@@ -62,6 +72,17 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    extractCSS: true,
+    optimization: {
+      minimize: true,
+      splitChunks: {
+        chunks: 'all',
+        automaticNameDelimiter: '.',
+        name: undefined,
+        cacheGroups: {}
+      }
+    },
+
     /*
     ** You can extend webpack config here
     */

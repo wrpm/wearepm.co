@@ -1,12 +1,13 @@
 <template>
   <div class="section__label">
-    <span 
-      ref="text" 
-      class="line">{{ label }}</span>
+    <span
+      ref="label"
+      class="label"
+      v-html="label"/>
     <slot />
-    <span 
-      ref="line" 
-      class="section__label__line"/>
+    <span
+      ref="line"
+      class="line"/>
   </div>
 </template>
 
@@ -27,37 +28,25 @@ export default {
 .section__label {
   display: block;
   position: relative;
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  padding-bottom: 1rem;
-  text-transform: uppercase;
+  padding-bottom: $spacer;
 
   @include media-breakpoint-up(md) {
     padding-bottom: 2rem;
   }
 
+  .label {
+    display: block;
+    font-weight: 500;
+    font-size: $font-size-sm;
+    text-transform: uppercase;
+  }
+
   .line {
     display: block;
+    position: absolute;
+    bottom: 0;
+    border: 1px solid $body-color;
+    width: 30px;
   }
-
-  .muted {
-    display: inline-block;
-    opacity: 0.3;
-    text-transform: none;
-  }
-
-  small {
-    font-weight: normal;
-  }
-}
-
-.section__label__line {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  border: 1px solid $body-color;
-  width: 30px;
 }
 </style>

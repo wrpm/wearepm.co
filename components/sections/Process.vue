@@ -1,19 +1,19 @@
 <template>
-  <div 
-    v-view.once="onceInViewHandler" 
+  <div
+    v-view.once="onceInViewHandler"
     class="process">
     <div class="process__wrapper">
-      <base-section-label 
-        ref="label" 
+      <base-section-label
+        ref="label"
         :label="overline"/>
-      <base-section-title 
-        ref="title" 
+      <base-section-title
+        ref="title"
         :title="title" />
-      <base-section-text 
-        ref="description" 
+      <base-section-text
+        ref="description"
         :text="text" />
-      <base-section-text 
-        ref="description2" 
+      <base-section-text
+        ref="description2"
         :text="text2" />
       <div class="process__list">
         <process-steps />
@@ -31,16 +31,14 @@ export default {
   components: {
     ProcessSteps
   },
-  data() {
-    return {
-      overline: 'How we do it?',
-      title: 'Our Process',
-      text:
-        "We're collaborators by nature and we work side by side with customers who trust us, we believe in working <em>with</em> you rather than <em>for</em> you.",
-      text2:
-        'Our process is built to discover and deliver your idea through cutting-edge digital experiences and exceptional products.'
-    }
-  },
+  data: () => ({
+    overline: 'How we do it?',
+    title: 'Our Process',
+    text:
+      "We're collaborators by nature and we work side by side with customers who trust us, we believe in working <em>with</em> you rather than <em>for</em> you.",
+    text2:
+      'Our process is built to discover and deliver your idea through cutting-edge digital experiences and exceptional products.'
+  }),
   computed: {},
   mounted() {
     this.initAnimation()
@@ -53,7 +51,7 @@ export default {
       // const stepsEl = self.$el.querySelectorAll('.steps')
 
       const els = [
-        self.$refs.label.$refs.text,
+        self.$refs.label.$refs.label,
         self.$refs.title,
         self.$refs.description,
         self.$refs.description2

@@ -39,21 +39,13 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  background-color: $body-background;
-  margin: 0;
-}
-
 .page--index {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
   padding: $app-padding;
-  color: #fafafa;
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
   z-index: 1;
   overflow: hidden;
-  box-sizing: border-box;
 }
 </style>

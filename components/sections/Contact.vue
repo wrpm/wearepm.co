@@ -1,54 +1,39 @@
 <template>
-  <div 
-    v-view.once="onceInViewHandler" 
+  <div
+    v-view.once="onceInViewHandler"
     class="contact" >
+
     <div class="contact__wrapper">
-      <base-section-label 
-        ref="label" 
+      <base-section-label
+        ref="label"
         :label="overline"/>
-      <base-section-title 
-        ref="title" 
+      <base-section-title
+        ref="title"
         :title="title" />
-      <base-section-text 
-        ref="description" 
+      <base-section-text
+        ref="description"
         :text="text" />
     </div>
+
     <div class="section__content">
-      <a 
-        href="mailto:office@wearepm.co" 
-        class="c-watch_title_wrapper">
-        <span class="c-watch_title -main">
-          {{ ctaText }}
-        </span>
-        <span 
-          class="c-watch_title -delayed" 
-          data-speed="3.1" 
-          data-position="middle" 
-          style="transform: translate3d(0px, 42.16px, 0px);">
-          {{ ctaText }}
-        </span>
-        <span 
-          class="c-watch_title -delayed" 
-          data-speed="2.3" 
-          data-position="middle" 
-          style="transform: translate3d(0px, 31.28px, 0px);">
-          {{ ctaText }}
-        </span>
-        <span 
-          class="c-watch_title -delayed" 
-          data-speed="1.3" 
-          data-position="middle" 
-          style="transform: translate3d(0px, 17.68px, 0px);">
-          {{ ctaText }}
-        </span>
+
+      <a
+        href="mailto:office@wearepm.co"
+        class="touch-link">
+        <span
+          class="touch-link__text"
+          v-html="ctaText" />
       </a>
+
     </div>
+
     <div class="section__footer">
       <div class="help">
-        <p>Click "touch" and say hi.</p>
-        <p>Follow us on Instagram, Facebook, or LinkedIn to stay up to date.</p>
+        <p class="font-weight-bold">Click "Touch" and say hi.</p>
+        <p>Follow us on <a href="#">Instagram</a>, <a href="#">Facebook</a>, or <a href="#">LinkedIn</a> to stay up to date.</p>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -76,7 +61,7 @@ export default {
       const self = this
 
       const els = [
-        self.$refs.label.$refs.text,
+        self.$refs.label.$refs.label,
         self.$refs.title,
         self.$refs.description
       ]
@@ -136,7 +121,7 @@ export default {
     display: flex;
     flex-direction: column;
     text-align: left;
-    color: $body-color;
+    // color: $body-color;
 
     .contact__title {
       font-size: 2rem;
@@ -155,34 +140,22 @@ export default {
 
 // ---
 
-.c-watch_title_wrapper {
-  display: block;
-  color: #fff;
+.touch-link {
+  display: inline-block;
   position: relative;
-  // font-family: "Neue Haas Grotesk",sans-serif;
   font-weight: 700;
   text-decoration: none;
   transition: color 0.2s linear;
   cursor: pointer;
-
-  &:hover {
-    color: rgb(240, 15, 30);
-  }
+  color: inherit;
 }
 
-.c-watch_title {
+.touch-link__text {
   display: block;
-  line-height: 0.75;
   margin-bottom: 0;
-  background-color: #000;
-  pointer-events: none;
-  // text-transform: uppercase;
-}
-
-.c-watch_title {
   font-size: 6rem;
+  line-height: 0.75;
   letter-spacing: -1rem;
-  pointer-events: none;
 
   @include media-breakpoint-up(md) {
     font-size: 11rem;
@@ -197,19 +170,6 @@ export default {
   }
 }
 
-.c-watch_title.-main {
-  position: relative;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.c-watch_title.-delayed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 0;
-}
 .section__content {
   padding: 1rem 0 6rem;
 
@@ -223,6 +183,8 @@ export default {
 }
 
 .section__footer {
+  padding-left: 12rem;
+
   .help {
     max-width: 300px;
     font-size: 0.875rem;

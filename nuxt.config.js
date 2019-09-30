@@ -23,7 +23,13 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500&display=swap&subset=latin-ext'
+      }
+    ]
   },
 
   /*
@@ -34,7 +40,6 @@ module.exports = {
   /*
   ** Global CSS
   */
-  // css: ['~assets/scss/index.scss'],
   css: ['@/assets/scss/app.scss'],
 
   /*
@@ -61,8 +66,9 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
-    ['@nuxtjs/google-analytics']
+    '@nuxtjs/google-analytics'
   ],
+
   'google-analytics': {
     id: process.env.GOOGLE_TRACKING_ID
   },
@@ -78,7 +84,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    // analyze: true,
 
     extractCSS: true,
 

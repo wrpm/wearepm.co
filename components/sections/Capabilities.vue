@@ -1,23 +1,23 @@
 <template>
-  <div 
-    v-view.once="onceInViewHandler" 
+  <div
+    v-view.once="onceInViewHandler"
     class="capabilities">
     <div class="capabilities__wrapper">
-      <base-section-label 
-        ref="label" 
+      <base-section-label
+        ref="label"
         :label="overline"/>
-      <base-section-title 
-        ref="title" 
+      <base-section-title
+        ref="title"
         :title="title" />
-      <base-section-text 
-        ref="description" 
+      <base-section-text
+        ref="description"
         :text="text" />
       <div class="capabilities__list">
         <div class="row">
           <!-- <div class="col-md-4"></div> -->
-          <div 
-            v-for="(capabilityGroup, index) in capabilities" 
-            :key="index" 
+          <div
+            v-for="(capabilityGroup, index) in capabilities"
+            :key="index"
             class="col-md-6 col-lg-3 capabilities__list-group">
 
             <capability-list :group="capabilityGroup" />
@@ -37,14 +37,12 @@ export default {
   components: {
     CapabilityList
   },
-  data() {
-    return {
-      overline: 'What does WRPM do?',
-      title: 'Our Services & Capabilities',
-      text:
-        'Our talented creatives and developers come together to design and build consumer-facing digital solutions crafted to solve unique business challenges'
-    }
-  },
+  data: () => ({
+    overline: 'What does WRPM do?',
+    title: 'Our Services & Capabilities',
+    text:
+      'Our talented creatives and developers come together to design and build consumer-facing digital solutions crafted to solve unique business challenges'
+  }),
   computed: {
     capabilities() {
       return this.$store.getters.capabilities
@@ -58,7 +56,7 @@ export default {
       const self = this
 
       const els = [
-        self.$refs.label.$refs.text,
+        self.$refs.label.$refs.label,
         self.$refs.title,
         self.$refs.description
       ]

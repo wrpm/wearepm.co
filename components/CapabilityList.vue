@@ -1,13 +1,17 @@
 <template>
   <div class="capability-list">
-    <h3 class="capability-list__title">{{ group.title }}</h3>
-    <ul class="capability-list__list">
+    <h3
+      ref="title"
+      class="title"
+      v-html="group.title" />
+    <ul
+      ref="list"
+      class="list">
       <li
         v-for="(item, index) in group.list"
         :key="index"
-        :class="{ core: item.core, hide: showCoreOnly && !item.core }">
-        {{ item.title }}
-      </li>
+        :class="{ core: item.core, hide: showCoreOnly && !item.core }"
+        v-html="item.title" />
     </ul>
   </div>
 </template>
@@ -21,38 +25,34 @@ export default {
       required: true
     }
   },
-  data() {
-    return {
-      showCoreOnly: false
-    }
-  },
+  data: () => ({
+    showCoreOnly: false
+  }),
   mounted() {},
   methods: {}
 }
 </script>
 
 <style lang="scss" scoped>
-.capability-list__title {
-  font-weight: 500;
-}
+.capability-list {
+  .title {
+    margin-bottom: 1rem;
+    text-decoration: underline;
 
-.capability-list__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  li {
-    font-size: 0.875rem;
-    color: rgba($body-color, 0.87);
-    line-height: 1.5;
-    transition: color 0.4s linear;
-
-    &:not(.core) {
-      color: rgba($body-color, 0.6);
+    @include media-breakpoint-up(md) {
+      margin-bottom: 2rem;
     }
+  }
 
-    &.hide {
-      color: rgba($body-color, 0.12);
+  .list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      font-size: $font-size-sm;
+      color: rgba($body-color, 0.87);
+      line-height: 2;
     }
   }
 }

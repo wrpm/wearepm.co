@@ -1,8 +1,13 @@
 [
   {
     "title": "Strategy",
-    "list": [{
+    "list": [
+      {
         "title": "Discovery & Research",
+        "core": true
+      },
+      {
+        "title": "Design Exploration",
         "core": true
       },
       {
@@ -42,16 +47,13 @@
   },
   {
     "title": "Development",
-    "list": [{
+    "list": [
+      {
         "title": "Website Development",
         "core": true
       },
       {
         "title": "Web Applications",
-        "core": true
-      },
-      {
-        "title": "Information Architecture",
         "core": true
       },
       {

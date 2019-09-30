@@ -1,6 +1,6 @@
 <template>
-  <p 
-    class="section__text" 
+  <p
+    class="section__text"
     v-html="text" />
 </template>
 

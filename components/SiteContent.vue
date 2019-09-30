@@ -1,13 +1,15 @@
 <template>
-  <main 
+  <main
     class="site-content"
     role="main">
     <div class="site-content__container">
-      <intro />
-      <capabilities />
-      <process />
-      <interest />
-      <contact />
+      <Intro />
+      <Capabilities />
+      <!-- <Work /> -->
+      <WorkList />
+      <Process />
+      <Interest />
+      <Contact />
     </div>
   </main>
 </template>
@@ -16,6 +18,8 @@
 import Intro from '~/components/sections/Intro'
 import Capabilities from '~/components/sections/Capabilities'
 import Process from '~/components/sections/Process'
+import Work from '~/components/sections/Work'
+import WorkList from '~/components/sections/WorkList'
 import Interest from '~/components/sections/Interest'
 import Contact from '~/components/sections/Contact'
 
@@ -24,6 +28,8 @@ export default {
   components: {
     Intro,
     Capabilities,
+    Work,
+    WorkList,
     Process,
     Interest,
     Contact

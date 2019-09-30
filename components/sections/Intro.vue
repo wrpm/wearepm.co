@@ -1,27 +1,27 @@
 <template>
-  <div 
-    v-view.once="onceInViewHandler" 
+  <div
+    v-view.once="onceInViewHandler"
     class="intro">
     <div class="intro__wrapper">
-      <base-section-label 
-        ref="label" 
+      <base-section-label
+        ref="label"
         :label="overline">
-        <small 
-          ref="labelSmall" 
-          class="line muted">
+        <small
+          ref="labelSmall"
+          class="d-block text-muted">
           or short <abbr title="We Are PM">WRPM</abbr> (pronounced /wi ɑr ˈpiˈɛm/)
         </small>
       </base-section-label>
-      <h1 
-        ref="title" 
+      <h1
+        ref="title"
         class="intro__title">
         <span class="line">Strategy.</span>
         <span class="line">Design.</span>
         <span class="line red">Development.</span>
       </h1>
-      <p 
-        ref="description" 
-        class="intro__text" 
+      <p
+        ref="description"
+        class="intro__text"
         v-html="text" />
     </div>
   </div>
@@ -53,7 +53,7 @@ export default {
       const titleLines = self.$refs.title.querySelectorAll('.line')
 
       const els = [
-        self.$refs.label.$refs.text,
+        self.$refs.label.$refs.label,
         self.$refs.labelSmall,
         // self.$refs.title
         ...titleLines
@@ -114,15 +114,14 @@ export default {
     display: flex;
     flex-direction: column;
     text-align: left;
-    color: $body-color;
 
     .intro__title {
       padding-top: 1rem;
       padding-bottom: 1rem;
       margin: 0;
       font-size: 2rem;
-      font-weight: 600;
-      line-height: 1;
+      font-weight: 400;
+      line-height: 1.2;
 
       @include media-breakpoint-up(md) {
         padding-top: 2rem;
@@ -138,8 +137,10 @@ export default {
 
       span {
         display: block;
+        text-decoration: underline;
+
         &.red {
-          color: rgb(240, 15, 30);
+          color: theme-color('primary');
         }
       }
     }

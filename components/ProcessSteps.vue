@@ -1,12 +1,13 @@
 <template>
   <div class="process-steps row-container">
     <div class="row">
-      <div class="col-md-4 col--list">
+
+      <div class="col-md-8 offset-md-2 col--list">
         <ol class="process-list">
-          <li 
+          <li
             v-for="(step, index) in steps"
             :key="index"
-            :class="{active: index === activeStepIndex}" 
+            :class="{active: index === activeStepIndex}"
             class="process-list__item"
             @click.prevent="setActiveStepIndex(index)">
             <span class="process-list__item__index">{{ index + 1 | padNumber }}</span>
@@ -14,18 +15,23 @@
           </li>
         </ol>
       </div>
-      <div class="col-md-8 col--content">
-        <transition-group 
-          name="step" 
-          tag="div" 
+
+      <div class="col-md-8 offset-md-2 col--content">
+        <transition-group
+          name="step"
+          tag="div"
           class="steps">
-          <div 
+          <div
             v-for="(step, index) in steps"
             v-if="index === activeStepIndex"
             :key="step.title"
             class="step">
-            <h3 class="step__title">{{ activeStep.title }}</h3>
-            <p class="step__text"> {{ activeStep.text }}</p>
+            <h3
+              class="step__title"
+              v-html="activeStep.title" />
+            <p
+              class="step__text"
+              v-html="activeStep.text" />
           </div>
         </transition-group>
       </div>
@@ -70,6 +76,12 @@ export default {
   margin-right: -1rem;
 }
 
+.col--list {
+  @include media-breakpoint-up(md) {
+    margin-bottom: 3rem;
+  }
+}
+
 .col--content {
   margin-top: 10vh;
 
@@ -79,6 +91,7 @@ export default {
 }
 
 .process-list {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -86,8 +99,42 @@ export default {
   padding: 0;
   list-style: none;
 
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    padding-top: 1rem;
+    border-top: 1px solid #000;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 9px;
+      height: 9px;
+      top: 0;
+      left: 0;
+      background: #000;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      transform: translate(-50%, -50%);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 200vw;
+      height: 0;
+      top: -1px;
+      left: 100%;
+      border-top: 1px dashed #000;
+    }
+  }
+
   li {
     line-height: 2;
+    @include media-breakpoint-up(md) {
+      flex: 0 0 25%;
+    }
   }
 }
 
@@ -98,12 +145,13 @@ export default {
 
   &.active {
     color: rgba($body-color, 1);
+    font-weight: 500;
   }
 }
 
 .process-list__item__index {
   display: inline-block;
-  width: 3rem;
+  width: 2rem;
   text-align: left;
 }
 
@@ -138,7 +186,10 @@ export default {
 
 .step__title {
   margin-top: 0;
-  font-weight: 500;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  font-size: 2rem;
+  // text-decoration: underline;
 }
 
 .step__text {

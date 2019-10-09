@@ -1,5 +1,5 @@
 <template>
-  <div class="navi">
+  <nav class="app-contact">
     <div
       v-for="(item, index) in items"
       :key="index"
@@ -10,30 +10,29 @@
         :url="item.url"
       />
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
 export default {
-  name: 'SiteNav',
-  data() {
-    return {
-      items: [
-        {
-          title: 'Contact us',
-          icon: 'send.svg',
-          url: 'mailto:office@wearepm.co'
-        }
-      ]
-    }
-  }
+  name: 'AppContact',
+
+  data: () => ({
+    items: [
+      {
+        title: 'Contact us',
+        icon: 'send.svg',
+        url: 'mailto:office@wearepm.co'
+      }
+    ]
+  })
 }
 </script>
 
 <style lang="scss" scoped>
 $navItemWidth: 40px;
 
-.navi {
+.app-contact {
   display: flex;
   flex-direction: column;
   pointer-events: auto;

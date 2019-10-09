@@ -1,7 +1,7 @@
 {
   "name": "wearepm.co",
-  "version": "1.0.2",
-  "description": "WRPM Corporate Website with Nuxt &amp; Vue",
+  "version": "1.1.0",
+  "description": "WRPM Corporate Website",
   "author": {
     "name": "WRPM",
     "email": "office@wearepm.co",
@@ -27,17 +27,20 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.0.0",
-    "@nuxtjs/dotenv": "^1.3.0",
+    "@nuxtjs/axios": "^5.6.0",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/google-analytics": "^2.0.2",
+    "@nuxtjs/pwa": "^3.0.0-beta.19",
     "@nuxtjs/style-resources": "^0.1.2",
+    "@nuxtjs/svg": "^0.1.6",
     "bootstrap": "^4.1.3",
-    "cross-env": "^5.2.0",
+    "cross-env": "^5.2.1",
+    "date-fns": "^2.4.1",
     "express": "^4.16.3",
     "gsap": "^2.0.2",
     "intersection-observer": "^0.7.0",
-    "lodash": "^4.17.11",
-    "nuxt": "^2.0.0",
+    "lodash": "^4.17.15",
+    "nuxt": "^2.9.2",
     "nuxt-sass-resources-loader": "^2.0.5",
     "vue-check-view": "^0.2.3"
   },
@@ -45,12 +48,12 @@
     "babel-eslint": "^8.2.1",
     "eslint": "^5.0.1",
     "eslint-config-prettier": "^3.1.0",
-    "eslint-loader": "^2.0.0",
+    "eslint-loader": "^2.2.1",
     "eslint-plugin-prettier": "2.6.2",
     "eslint-plugin-vue": "^4.0.0",
     "node-sass": "^4.10.0",
-    "nodemon": "^1.11.0",
+    "nodemon": "^1.19.3",
     "prettier": "1.14.3",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.3.1"
   }
 }

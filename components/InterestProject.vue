@@ -16,37 +16,34 @@
     <nuxt-link
       ref="btn"
       :to="buttonOptions.to"
-      :class="buttonOptions.class"
-      class="btn btn-outline-dark"
+      :class="btnClass"
+      class="btn"
       v-html="buttonOptions.label" />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 // import { TimelineMax } from 'gsap'
 
 export default {
   name: 'InterestProject',
-  components: {
-    // Stripes
-  },
+
+  components: {},
 
   props: {
     index: {
       type: Number,
       default: 0
     },
-
     title: {
       type: String,
       required: true
     },
-
     text: {
       type: String,
       required: true
     },
-
     buttonOptions: {
       type: Object,
       default: () => ({
@@ -57,15 +54,21 @@ export default {
     }
   },
 
-  data: () => ({}),
+  // data: () => ({}),
+  computed: {
+    ...mapGetters([
+      'isLight'
+    ]),
 
-  mounted() {},
-
-  methods: {}
+    btnClass() {
+      return this.isLight ? 'btn-outline-dark' : 'btn-outline-light'
+    }
+  }
+  // mounted() {},
+  // methods: {}
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .interest-project {
   display: flex;
@@ -76,8 +79,9 @@ export default {
     display: block;
     margin-bottom: 1rem;
     text-transform: uppercase;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     letter-spacing: 0.05em;
+    color: var(--primary, $primary);
   }
 
   .title {

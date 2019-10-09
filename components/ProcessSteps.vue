@@ -71,11 +71,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  margin-left: -1rem;
-  margin-right: -1rem;
-}
-
 .col--list {
   @include media-breakpoint-up(md) {
     margin-bottom: 3rem;
@@ -101,22 +96,7 @@ export default {
 
   @include media-breakpoint-up(md) {
     flex-direction: row;
-    padding-top: 1rem;
-    border-top: 1px solid #000;
-
-    &:before {
-      content: '';
-      position: absolute;
-      display: block;
-      width: 9px;
-      height: 9px;
-      top: 0;
-      left: 0;
-      background: #000;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      transform: translate(-50%, -50%);
-    }
+    border-top: 1px solid var(--black, $black);
 
     &:after {
       content: '';
@@ -126,26 +106,75 @@ export default {
       height: 0;
       top: -1px;
       left: 100%;
-      border-top: 1px dashed #000;
+      border-top: 1px dashed var(--black, $black);
     }
   }
 
   li {
+    position: relative;
+    display: block;
     line-height: 2;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
     @include media-breakpoint-up(md) {
       flex: 0 0 25%;
+
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 11px;
+        height: 11px;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        background-color: var(--body-bg, $body-bg);
+        border: 1px solid transparent;
+        transform: translate(-50%, -50%);
+        transition: all 0.2s ease-out;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 9px;
+        height: 9px;
+        top: 0;
+        left: 0;
+        background-color: var(--black, $black);
+        border-radius: 50%;
+        border: 2px solid var(--body-bg, $body-bg);
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease-in-out;
+      }
     }
   }
 }
 
 .process-list__item {
-  color: rgba($body-color, 0.56);
+  // color: rgba($body-color, 0.56);
   transition: color 0.4s ease;
   cursor: pointer;
 
   &.active {
-    color: rgba($body-color, 1);
+    // color: rgba($body-color, 1);
     font-weight: 500;
+
+    // circle
+    &:before {
+      width: 24px;
+      height: 24px;
+      // border: 1px solid rgba($black, 0.12);
+      border: 1px solid var(--body-color, $body-color);
+    }
+
+    // dot
+    &:after {
+      transform: translate(-50%, -50%) scale(1.2);
+      background-color: var(--primary, $primary);
+    }
   }
 }
 
@@ -189,20 +218,11 @@ export default {
   margin-bottom: 2rem;
   font-weight: 400;
   font-size: 2rem;
-  // text-decoration: underline;
 }
 
 .step__text {
   font-size: 0.875rem;
-  color: rgba($body-color, 0.87);
-}
-
-.full-width-container {
-  // height: 40vh;
-  background: #ccc;
-
-  @include media-breakpoint-up(md) {
-    height: 40vh;
-  }
+  color: var(--body-color, $body-color);
+  opacity: 0.87;
 }
 </style>

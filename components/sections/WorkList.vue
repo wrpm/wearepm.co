@@ -20,12 +20,16 @@
             <h3
               class="project-title"
               v-html="project.title" />
-            <div
-              class="marquee">
-              <span
-                class="project-subtitle"
-                v-html="project.subtitle" />
-            </div>
+              <div class="marquee-wrapper">
+                <marquee-text
+                  :duration="10"
+                  :repeat="5"
+                  class="marquee">
+                  <span
+                    class="project-subtitle"
+                    v-html="project.subtitle" />
+                </marquee-text>
+              </div>
           </li>
         </ul>
       </div>
@@ -36,44 +40,17 @@
 <script>
 export default {
   name: 'WorkList',
+
   data: () => ({
     overline: 'What we did?',
     title: 'Selected Projects',
     text:
       "We're collaborators by nature and we work side by side with customers who trust us, we believe in working <em>with</em> you rather than <em>for</em> you."
   }),
+
   computed: {
     projects() {
-      return [
-        {
-          title: 'Infra Nova',
-          subtitle: 'Lorem ipsum dolor sit amet'
-        },
-        {
-          title: 'Jupyter',
-          subtitle: 'Cupidatat non proident'
-        },
-        {
-          title: 'Lupon Media',
-          subtitle: 'Esse cillum dolore eu fugiat'
-        },
-        {
-          title: 'New Startegy',
-          subtitle: 'Voluptate velit esse cillum dolore'
-        },
-        {
-          title: 'Hotel Nauta Perast',
-          subtitle: 'Dolor in reprehenderit in voluptate'
-        },
-        {
-          title: 'Arizata',
-          subtitle: 'Online interior design services'
-        },
-        {
-          title: 'Maximus AI',
-          subtitle: 'Ut aliquip ex ea commodo consequat'
-        }
-      ]
+      return this.$store.getters.selectedWork
     }
   },
   mounted() {},
@@ -100,34 +77,85 @@ export default {
 
     li {
       position: relative;
-      padding-bottom: 1.6rem;
+      padding-bottom: 1.25rem;
+      margin-bottom: 0.25rem;
+      line-height: 1.25;
+      cursor: pointer;
 
       .project-title {
-        font-size: 3.5rem;
-        font-weight: 500;
-        line-height: 1;
-        padding-top: 0.5rem;
-        margin-bottom: 0.5rem;
-        text-decoration: underline;
+        position: relative;
+        font-size: 4rem;
+        font-weight: 600;
+        line-height: 1.1;
+        margin-bottom: 0.25rem;
+
+        transition: color 0.4s ease;
+        text-transform: uppercase;
+        // text-decoration: underline;
+
+
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          width: 100%;
+          height: 4px;
+          bottom: 0;
+          left: 0;
+          transform-origin: left center;
+          transition: transform 0.8s cubic-bezier(0.36, 0.53, 0, 1);
+        }
+
+        &:before {
+          background: var(--black, $black);
+        }
+
+        &:after {
+          transform: scaleX(0);
+          background: var(--primary, $primary);
+        }
+
+        &:hover {
+          &:after {
+            transform: scaleX(1);
+          }
+        }
       }
 
-      .marquee {
+      .marquee-wrapper {
         position: absolute;
         left: 0;
         bottom: 0;
         display: none;
+        width: 100%;
       }
 
+      // .marquee {
+      //   width: 100%;
+      // }
+
       .project-subtitle {
-        font-size: 14px;
+        font-size: $font-size-sm;
         font-weight: 400;
-        color: rgba(0, 0, 0, 0.56);
         white-space: nowrap;
+
+        &:after {
+          // content: "\00d7"; // x
+          // content: "\2219"; // bullet
+          // content: "\2014"; // em dash
+          // content: "\2666"; // diamond
+          content: "\2191"; // upward arrow
+
+
+          display: inline-block;
+          padding: 0 0.5rem;
+        }
       }
 
       &:hover {
-        .marquee {
-          display: inline-block;
+        .marquee-wrapper {
+          display: block;
         }
       }
     }

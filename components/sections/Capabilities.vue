@@ -116,7 +116,6 @@ export default {
     display: flex;
     flex-direction: column;
     text-align: left;
-    color: $body-color;
   }
 }
 
@@ -147,16 +146,16 @@ export default {
 
   li {
     font-size: 0.875rem;
-    color: rgba($body-color, 0.87);
+    // color: rgba($body-color, 0.87);
     line-height: 1.5;
     transition: color 0.4s linear;
 
     &:not(.core) {
-      color: rgba($body-color, 0.6);
+      // color: rgba($body-color, 0.6);
     }
 
     &.hide {
-      color: rgba($body-color, 0.12);
+      // color: rgba($body-color, 0.12);
     }
   }
 }

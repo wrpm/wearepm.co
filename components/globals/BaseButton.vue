@@ -1,24 +1,24 @@
 <template>
-  <a 
-    :href="url" 
-    class="button" 
-    target="_blank" 
+  <a
+    :href="url"
+    class="button"
+    target="_blank"
     rel="noopener nofollow">
-    <svg 
-      width="60" 
-      height="60" 
-      viewBox="0 0 100 100" 
+    <svg
+      width="60"
+      height="60"
+      viewBox="0 0 100 100"
       class="svg">
-      <path 
-        ref="svgBorder" 
-        d="M 100,0 L 100,100,0,100,0,0 Z" 
-        fill="none" 
+      <path
+        ref="svgBorder"
+        d="M 100,0 L 100,100,0,100,0,0 Z"
+        fill="none"
         class="svg__border"/>
     </svg>
-    <img 
-      ref="icon" 
-      :src="iconUrl" 
-      :alt="iconAlt" 
+    <img
+      ref="icon"
+      :src="iconUrl"
+      :alt="iconAlt"
       class="icon">
   </a>
 </template>
@@ -44,20 +44,16 @@ export default {
     },
     animation: {
       type: Object,
-      default() {
-        return {
-          paused: true,
-          delay: 0
-        }
-      }
+      default: () => ({
+        paused: true,
+        delay: 0
+      })
     }
   },
 
-  data() {
-    return {
-      animationCompleted: false
-    }
-  },
+  data: () => ({
+    animationCompleted: false
+  }),
 
   computed: {
     iconUrl() {
@@ -135,6 +131,7 @@ $iconSize: 12px;
     width: 100%;
     height: 100%;
     overflow: hidden;
+    display: none;
   }
 
   .svg__border {

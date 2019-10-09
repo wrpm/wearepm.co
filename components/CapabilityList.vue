@@ -2,6 +2,7 @@
   <div class="capability-list">
     <h3
       ref="title"
+      :class="{ 'text-primary': group.title === 'Development' }"
       class="title"
       v-html="group.title" />
     <ul
@@ -25,11 +26,13 @@ export default {
       required: true
     }
   },
+
   data: () => ({
     showCoreOnly: false
-  }),
-  mounted() {},
-  methods: {}
+  })
+
+  // mounted() {},
+  // methods: {}
 }
 </script>
 
@@ -51,7 +54,7 @@ export default {
 
     li {
       font-size: $font-size-sm;
-      color: rgba($body-color, 0.87);
+      // color: rgba($body-color, 0.87);
       line-height: 2;
     }
   }

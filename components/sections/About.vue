@@ -1,7 +1,7 @@
 <template>
   <div
     v-view.once="onceInViewHandler"
-    class="process">
+    class="about">
     <div class="process__wrapper">
       <base-section-label
         ref="label"
@@ -12,34 +12,29 @@
       <base-section-text
         ref="description"
         :text="text" />
-      <base-section-text
-        ref="description2"
-        :text="text2" />
-      <div class="process__list">
-        <process-steps />
-      </div>
+
+      <div class="trail-wrapper"/>
     </div>
   </div>
 </template>
 
 <script>
-import ProcessSteps from '~/components/ProcessSteps'
 import { TimelineMax } from 'gsap'
 
 export default {
-  name: 'Process',
-  components: {
-    ProcessSteps
-  },
+  name: 'About',
+
+  components: {},
+
   data: () => ({
-    overline: 'How we do it?',
-    title: 'Our Process',
+    overline: 'Who we are?',
+    title: 'An Independent Creative Studio',
     text:
-      "We're collaborators by nature and we work side by side with customers who trust us, we believe in working <em>with</em> you rather than <em>for</em> you.",
-    text2:
-      'Our process is built to discover and deliver your idea through cutting-edge digital experiences and exceptional products.'
+      "We're collaborators by nature and we work side by side with customers who trust us, we believe in working <em>with</em> you rather than <em>for</em> you."
   }),
+
   computed: {},
+
   mounted() {
     this.initAnimation()
   },
@@ -47,24 +42,13 @@ export default {
     initAnimation() {
       const self = this
 
-      // const listItems = self.$el.querySelectorAll('.process-list__item')
-      // const stepsEl = self.$el.querySelectorAll('.steps')
-
       const els = [
         self.$refs.label.$refs.label,
         self.$refs.title,
-        self.$refs.description,
-        self.$refs.description2
-        // ...listItems
+        self.$refs.description
       ]
 
       self.$timeline = new TimelineMax({ paused: true, delay: 0.7 })
-
-      // self.$timeline.set(listItems, {
-      //   css: {
-      //     transition: 'none'
-      //   }
-      // })
 
       self.$timeline
         .staggerFrom(
@@ -107,21 +91,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.process {
+.about {
   padding-top: 20vh;
   padding-bottom: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  .process__wrapper {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-  }
 }
 
-.process__list {
-  margin-top: 20vh;
+.trail-wrapper {
+  height: 100vh;
 }
 </style>

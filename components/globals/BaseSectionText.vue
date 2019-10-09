@@ -27,7 +27,7 @@ export default {
   }
 
   @include media-breakpoint-up(lg) {
-    max-width: 50%;
+    max-width: 52%;
   }
 }
 </style>

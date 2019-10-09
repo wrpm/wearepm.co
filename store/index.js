@@ -4,6 +4,9 @@ import processStepsJson from '~/data/process-steps.json'
 // STATE -----------------------------------------------------------------------
 
 export const state = () => ({
+  // app
+  isLight: true,
+  // content
   capabilities: capabilitiesJson,
   processSteps: processStepsJson,
   socialProfiles: [
@@ -29,11 +32,41 @@ export const state = () => ({
       url: 'https://www.behance.net/wrpm'
     },
     {
-      name: 'LinkedIn',
+      name: 'Linkedin',
       title: 'Connect with us on LinkedIn',
       text: 'LinkedIn',
       icon: 'linkedin.svg',
       url: 'https://www.linkedin.com/company/wrpm/'
+    }
+  ],
+  selectedWork: [
+    {
+      title: 'Infra Nova',
+      subtitle: 'Lorem ipsum dolor sit amet'
+    },
+    {
+      title: 'Jupyter',
+      subtitle: 'Cupidatat non proident'
+    },
+    {
+      title: 'Lupon Media',
+      subtitle: 'Esse cillum dolore eu fugiat'
+    },
+    {
+      title: 'New Startegy',
+      subtitle: 'Voluptate velit esse cillum dolore'
+    },
+    {
+      title: 'Hotel Nauta Perast',
+      subtitle: 'Dolor in reprehenderit in voluptate'
+    },
+    {
+      title: 'Arizata',
+      subtitle: 'Online interior design services'
+    },
+    {
+      title: 'Maximus AI',
+      subtitle: 'Ut aliquip ex ea commodo consequat'
     }
   ]
 })
@@ -54,15 +87,19 @@ export const getters = {
    */
   getState: state => prop => (prop in state ? state[prop] : undefined),
 
+  isLight: state => state.isLight,
+
   capabilities: state => state.capabilities,
   processSteps: state => state.processSteps,
-  socialProfiles: state => state.socialProfiles
+  socialProfiles: state => state.socialProfiles,
+  selectedWork: state => state.selectedWork
 }
 
 // MUTTATIONS ------------------------------------------------------------------
 
 export const mutations = {
   /**
+   * SET
    * Generic mutation
    *
    * @example
@@ -72,12 +109,22 @@ export const mutations = {
    *  value: true
    * })
    * ```
-   *
-   * @param  {String} prop [description]
-   * @return {Mixed}
    */
   SET_STATE: (state, { prop, value }) => {
     state[prop] = value
+  },
+
+  /**
+   * TOGGLE
+   * Generic mutation
+   *
+   * @example
+   * ```
+   * this.$store.commit('TOGGLE', 'isMenuOpen')
+   * ```
+   */
+  TOGGLE: (state, key) => {
+    state[key] = !state[key]
   }
 }
 

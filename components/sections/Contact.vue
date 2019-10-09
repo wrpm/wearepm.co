@@ -17,21 +17,63 @@
 
     <div class="section__content">
 
-      <a
-        href="mailto:office@wearepm.co"
-        class="touch-link">
-        <span
-          class="touch-link__text"
-          v-html="ctaText" />
-      </a>
+      <div class="row">
+        <div class="col-touch">
+          <a
+            href="mailto:office@wearepm.co"
+            class="touch-link">
+            <span
+              class="touch-link__text"
+              v-html="ctaText" />
+          </a>
 
-    </div>
+          <div class="help">
+            <p class="help-touch">Click "Touch" and say hi.</p>
+            <p class="help-follow">Follow us on <a href="#">Instagram</a>, <a href="#">Facebook</a>, or <a href="#">LinkedIn</a> to stay up to date.</p>
+          </div>
 
-    <div class="section__footer">
-      <div class="help">
-        <p class="font-weight-bold">Click "Touch" and say hi.</p>
-        <p>Follow us on <a href="#">Instagram</a>, <a href="#">Facebook</a>, or <a href="#">LinkedIn</a> to stay up to date.</p>
+        </div>
+
+        <div class="col-info">
+          <div class="info">
+            <div class="info-block">
+              <h5 class="info-title">WRPM DOO</h5>
+              <p>Bulevar kralja Aleksandra 124 / 6<br>11000 Belgrade, Serbia</p>
+              <a
+                href="#"
+                title="">Find us on map</a>
+            </div>
+
+            <div class="info-block">
+              <h5 class="info-title">Phone</h5>
+              <p>
+                <a
+                  href="tel:+381604206043"
+                  title="call us">+381 60 4206043</a>
+              </p>
+            </div>
+
+            <div class="info-block">
+              <h5 class="info-title">General</h5>
+              <p>
+                <a
+                  href="mailto:office@wearepm.co"
+                  title="call us">office@wearepm.co</a>
+              </p>
+            </div>
+
+            <div class="info-block">
+              <h5 class="info-title">New Business</h5>
+              <p>
+                <a
+                  href="mailto:new@wearepm.co"
+                  title="call us">new@wearepm.co</a>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
 
   </div>
@@ -43,14 +85,12 @@ import { TimelineMax } from 'gsap'
 export default {
   name: 'Contact',
 
-  data() {
-    return {
-      overline: 'Contact',
-      title: 'Get in',
-      text: '',
-      ctaText: 'Touch'
-    }
-  },
+  data: () => ({
+    overline: 'Contact',
+    title: 'Get in',
+    text: '',
+    ctaText: 'Touch'
+  }),
 
   mounted() {
     this.initAnimation()
@@ -66,7 +106,10 @@ export default {
         self.$refs.description
       ]
 
-      self.$timeline = new TimelineMax({ paused: true, delay: 0.7 })
+      self.$timeline = new TimelineMax({
+        paused: true,
+        delay: 0.7
+      })
 
       self.$timeline
         .staggerFrom(
@@ -143,11 +186,15 @@ export default {
 .touch-link {
   display: inline-block;
   position: relative;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   transition: color 0.2s linear;
   cursor: pointer;
   color: inherit;
+
+  &:hover {
+    color: var(--primary, $primary);
+  }
 }
 
 .touch-link__text {
@@ -171,24 +218,73 @@ export default {
 }
 
 .section__content {
-  padding: 1rem 0 6rem;
+  padding-top: 1rem;
 
   @include media-breakpoint-up(md) {
-    padding: 2rem 0 8rem;
+    padding-top: 1.5rem;
   }
 
   @include media-breakpoint-up(lg) {
-    padding: 5rem 0 10rem;
+    padding-top: 2rem;
   }
 }
 
-.section__footer {
-  padding-left: 12rem;
+.help {
+  margin-top: 6rem;
+  margin-left: 12rem;
+  max-width: 300px;
+  font-size: 0.875rem;
+  line-height: 1.4;
 
-  .help {
-    max-width: 300px;
-    font-size: 0.875rem;
-    line-height: 1.4;
+  .help-touch {
+    position: relative;
+    font-weight: $font-weight-bold;
+
+    &:before {
+      content: "\2191\2191\2191"; // upward arrow
+      position: absolute;
+      left: -5rem;
+      font-size: 1.25rem;
+      font-weight: 400;
+      letter-spacing: -1px;
+      animation: moveArrows 1s infinite  alternate;
+    }
   }
+
+  .help-follow {}
+}
+
+.col-touch {
+  flex: 1;
+}
+.col-info {
+  margin-left: auto;
+}
+
+.info {
+  .info-block {
+    margin-bottom: 1.5rem;
+    font-size: $font-size-sm;
+  }
+
+  .info-title {
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+    color: var(--black, $black);
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: var(--body-color, $body-color);
+    text-decoration: underline;
+  }
+}
+
+@keyframes moveArrows {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
 }
 </style>

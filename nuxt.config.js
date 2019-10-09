@@ -8,8 +8,12 @@ module.exports = {
   // server: {
   //   port: process.env.APP_PORT, // default: 3000
   //   host: process.env.APP_HOST // default: localhost
-  //   // timing: process.env.TIMING_HEADER
   // },
+
+  env: {
+    baseUrl: process.env.APP_URL || 'http://localhost:3000',
+    version: pkg.version || '1.0.0'
+  },
 
   /*
   ** Headers of the page
@@ -27,7 +31,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500&display=swap&subset=latin-ext'
+        href: 'https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500&display=swap'
+        // href: 'https://fonts.googleapis.com/css?family=Turret+Road:300,400,500,700&display=swap'
+        // href: 'https://fonts.googleapis.com/css?family=Mansalva&display=swap'
       }
     ]
   },
@@ -63,9 +69,9 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
+    '@nuxtjs/svg',
     '@nuxtjs/google-analytics'
   ],
 
@@ -85,7 +91,8 @@ module.exports = {
   */
   build: {
 
-    extractCSS: true,
+    // extract css for production build
+    extractCSS: process.env.NODE_ENV === 'development' ? false : true,
 
     optimization: {
       minimize: true,
@@ -103,15 +110,15 @@ module.exports = {
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-          options: {
-            fix: true
-          }
-        })
+        // config.module.rules.push({
+        //   enforce: 'pre',
+        //   test: /\.(js|vue)$/,
+        //   loader: 'eslint-loader',
+        //   exclude: /(node_modules)/,
+        //   options: {
+        //     fix: true
+        //   }
+        // })
       }
     }
   }

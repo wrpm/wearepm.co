@@ -1,36 +1,32 @@
 <template>
   <div class="logo">
-    <svg 
-      version="1.1" 
-      xmlns="http://www.w3.org/2000/svg" 
-      xmlns:xlink="http://www.w3.org/1999/xlink" 
-      x="0px" 
-      y="0px"
-      viewBox="0 0 180 72" 
-      style="enable-background:new 0 0 180 72;" 
-      xml:space="preserve">
-      <path 
-        fill="#f00f1e" 
-        class="letter" 
+    <span class="sr-only">Home</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 180 72"
+      role="img">
+      <path
+        fill="#f00f1e"
+        class="letter"
         d="M46.7,68H34.2l-5-47.3c-0.1-1.1-0.2-2.1-0.2-3c0-0.9-0.1-1.9-0.2-3c-0.1,1.1-0.2,2.1-0.2,3
     		c0,0.9-0.1,1.9-0.2,3L23.6,68H11L4,4h8.5L17,53.7c0,1.6,0.1,3.1,0.3,4.6c0.2-1.5,0.3-3,0.3-4.6L22.8,4h12l5.3,49.4
     		c0,0.7,0,1.4,0.1,2c0.1,0.7,0.1,1.4,0.3,2c0.1-0.7,0.2-1.4,0.3-2c0.1-0.7,0.1-1.4,0.1-2L45.1,4h8.5L46.7,68z"/>
-      <path 
-        fill="#f00f1e" 
-        class="letter" 
+      <path
+        fill="#f00f1e"
+        class="letter"
         d="M80.8,68l-7.4-26.3h-3.3V68h-8.5V4h14.8c3.2,0,5.9,1,8,3.1c2.1,2.1,3.2,5.5,3.2,10.3v10.3
     		c0,3.2-0.6,5.9-1.7,7.9c-1.1,2-2.6,3.5-4.5,4.3L89.3,68H80.8z M79.1,18.5c0-2.3-0.4-4-1.1-4.9c-0.8-0.9-1.9-1.4-3.6-1.4h-4.3v21.5
     		h4.3c1.6,0,2.8-0.5,3.6-1.4c0.8-0.9,1.1-2.6,1.1-4.9V18.5z"/>
-      <path 
-        fill="#f00f1e" 
-        class="letter" 
+      <path
+        fill="#f00f1e"
+        class="letter"
         d="M122.4,33.8c-0.6,1.7-1.4,3.1-2.4,4.1c-1,1.1-2.2,1.8-3.6,2.3c-1.4,0.5-2.9,0.8-4.5,0.8h-6.1v27
     		h-8.5V4h14.6c1.6,0,3.1,0.3,4.5,0.8c1.4,0.5,2.6,1.3,3.6,2.3c1,1.1,1.8,2.4,2.4,4.1c0.6,1.7,0.9,3.7,0.9,6.1v10.3
     		C123.3,30,123,32.1,122.4,33.8z M114.7,17.8c0-2.3-0.4-4-1.1-4.9c-0.8-0.9-1.9-1.4-3.6-1.4h-4.3v22.1h4.3c1.6,0,2.8-0.5,3.6-1.4
     		c0.8-0.9,1.1-2.6,1.1-4.9V17.8z"/>
-      <polygon 
-        fill="#f00f1e" 
-        class="letter" 
+      <polygon
+        fill="#f00f1e"
+        class="letter"
         points="159.3,4 152.6,47.1 152.2,53 151.7,47.2 145.1,4 131.3,4 131.3,68 139.8,68 139.8,21.5
     		139.8,19.5 139.8,16.9 140.5,19.4 147.9,68 156.2,68 163.8,19.4 164.5,16.9 164.5,19.5 164.5,22.1 164.5,68 173,68 173,4 "/>
     </svg>
@@ -41,10 +37,9 @@
 import { TweenLite } from 'gsap'
 
 export default {
-  name: 'Logo',
+  name: 'AppLogo',
 
   mounted() {
-    // this.initAnimation()
     this.$nextTick(() => {
       this.initAnimation()
     })
@@ -61,10 +56,10 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .logo {
   height: 32px;
+  pointer-events: auto;
 
   svg {
     height: 100%;

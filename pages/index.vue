@@ -1,22 +1,53 @@
 <template>
   <div class="page page--index">
-    <SiteHeader />
-    <SiteContent />
+    <main
+      class="site-content"
+      role="main">
+      <div class="site-content__container">
+        <Intro />
+        <About />
+        <Intro2 />
+        <Capabilities />
+        <!-- <Work /> -->
+        <WorkList />
+        <Process />
+        <Interest />
+        <Contact />
+      </div>
+    </main>
   </div>
 </template>
 
 <script>
-import SiteHeader from '@/components/SiteHeader'
-import SiteContent from '@/components/SiteContent'
 import pageHeadMixin from '@/mixins/pageHeadMixin'
+
+import Intro from '@/components/sections/Intro'
+import About from '@/components/sections/About'
+import Intro2 from '@/components/sections/Intro2'
+import Capabilities from '@/components/sections/Capabilities'
+import Process from '@/components/sections/Process'
+import Work from '@/components/sections/Work'
+import WorkList from '@/components/sections/WorkList'
+import Interest from '@/components/sections/Interest'
+import Contact from '@/components/sections/Contact'
 
 export default {
   name: 'Index',
+
   components: {
-    SiteHeader,
-    SiteContent
+    Intro,
+    About,
+    Intro2,
+    Capabilities,
+    Work,
+    WorkList,
+    Process,
+    Interest,
+    Contact
   },
+
   mixins: [pageHeadMixin],
+
   head: {
     title: 'WRPM - Digital Creative Agency Belgrade',
     meta: [
@@ -31,7 +62,7 @@ export default {
       {
         hid: 'canonical',
         rel: 'canonical',
-        href: 'https://wearepm.co'
+        href: process.env.APP_URL
       }
     ]
   }
@@ -44,8 +75,31 @@ export default {
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  padding: $app-padding;
+  padding: 0 $app-padding;
   z-index: 1;
   overflow: hidden;
+}
+
+.site-content {
+  @include media-breakpoint-up(md) {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-left: 160px;
+    padding-right: 160px;
+  }
+
+  .site-content__container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+  }
 }
 </style>

@@ -2,12 +2,21 @@
   <div
     id="app"
     :class="{ loaded: didLoad }">
+
+    <AppHeader />
     <nuxt/>
+
   </div>
 </template>
 
 <script>
+import AppHeader from '@/components/app/AppHeader'
+
 export default {
+  components: {
+    AppHeader
+  },
+
   data: () => ({
     didLoad: false
   }),

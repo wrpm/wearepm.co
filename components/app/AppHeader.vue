@@ -1,44 +1,55 @@
 <template>
-  <header class="header">
+  <header class="app-header">
     <div class="header__wrapper">
+
       <div class="header__wrapper__logo">
-        <logo />
+        <AppLogo />
       </div>
+
       <div class="header__wrapper__nav">
-        <site-nav />
+        <AppContact />
       </div>
+
       <div class="header__wrapper__nav-social">
-        <site-nav-social />
+        <AppNavSocial />
       </div>
+
       <div class="header__wrapper__release">
-        <release />
+        <AppSoon />
+        <AppTheme />
+        <AppRelease />
       </div>
+
     </div>
   </header>
 </template>
 
 <script>
-import Logo from '~/components/Logo'
-import SiteNav from '~/components/SiteNav'
-import SiteNavSocial from '~/components/SiteNavSocial'
-import Release from '~/components/Release'
+import AppLogo from '@/components/app/AppLogo'
+import AppContact from '@/components/app/AppContact'
+import AppNavSocial from '@/components/app/AppNavSocial'
+import AppRelease from '@/components/app/AppRelease'
+import AppTheme from '@/components/app/AppTheme'
+import AppSoon from '@/components/app/AppSoon'
 
 export default {
-  name: 'SiteHeader',
+  name: 'AppHeader',
+
   components: {
-    Logo,
-    SiteNav,
-    SiteNavSocial,
-    Release
+    AppLogo,
+    AppContact,
+    AppNavSocial,
+    AppRelease,
+    AppTheme,
+    AppSoon
   },
-  data() {
-    return {}
-  }
+
+  data: () => ({})
 }
 </script>
 
 <style lang="scss" scoped>
-.header {
+.app-header {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -52,27 +63,32 @@ export default {
     padding: $app-padding-md;
   }
 }
+
 .header__wrapper {
   position: relative;
   width: 100%;
   height: 100%;
   pointer-events: none;
 }
+
 .header__wrapper__logo {
   position: absolute;
   left: 0;
   top: 0;
 }
+
 .header__wrapper__nav {
   position: absolute;
   right: 0;
   top: 0;
 }
+
 .header__wrapper__nav-social {
   position: absolute;
   right: 0;
   bottom: 0;
 }
+
 .header__wrapper__release {
   position: absolute;
   left: 0;

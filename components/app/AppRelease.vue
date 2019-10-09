@@ -8,16 +8,15 @@
 
 <script>
 import { TweenMax } from 'gsap'
-import pkg from '@/package'
 
 export default {
-  name: 'Release',
+  name: 'AppRelease',
 
   data: () => ({}),
 
   computed: {
     version() {
-      return pkg.version
+      return process.env.version
     },
     year() {
       return 2019
@@ -55,7 +54,8 @@ export default {
 .release {
   font-size: 11px;
   font-weight: 500;
-  color: rgba($body-color, 0.24);
+  color: var(--body-color, $body-color);
+  opacity: 0.36;
   display: none;
 
   @include media-breakpoint-up(md) {

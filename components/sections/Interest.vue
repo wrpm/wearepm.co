@@ -52,17 +52,17 @@ export default {
     projects() {
       return [
         {
+          title: 'Landing Pages <br>for Tech Startups',
+          text:
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.'
+        },
+        {
           title: 'Real Estate /<br>Property Development',
           text:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.'
         },
         {
-          title: 'Custom eShop <br>Product Configurator',
-          text:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.'
-        },
-        {
-          title: 'Landing Pages <br>for Tech Startups',
+          title: 'Custom eShop /<br>Product Configurator',
           text:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.'
         }
@@ -139,7 +139,7 @@ export default {
     display: flex;
     flex-direction: column;
     text-align: left;
-    color: $body-color;
+    color: var(--body-color, $body-color);
   }
 }
 

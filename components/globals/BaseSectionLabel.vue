@@ -39,14 +39,18 @@ export default {
     font-weight: 500;
     font-size: $font-size-sm;
     text-transform: uppercase;
+    color: var(--body-color, $body-color);
   }
 
   .line {
     display: block;
     position: absolute;
     bottom: 0;
-    border: 1px solid $body-color;
+    left: 0;
     width: 30px;
+    height: 2px;
+    background: var(--primary, $primary);
+    // background: var(--black, $black);
   }
 }
 </style>

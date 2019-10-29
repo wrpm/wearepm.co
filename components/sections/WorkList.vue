@@ -16,20 +16,29 @@
         <ul class="list">
           <li
             v-for="(project, index) in projects"
-            :key="index">
+            :key="index"
+            @mouseover="activeItem = project"
+            @mouseleave="activeItem = null">
             <h3
-              class="project-title"
-              v-html="project.title" />
-              <div class="marquee-wrapper">
-                <marquee-text
-                  :duration="10"
-                  :repeat="5"
-                  class="marquee">
-                  <span
-                    class="project-subtitle"
-                    v-html="project.subtitle" />
-                </marquee-text>
-              </div>
+              :class="{ 'not-active': !!activeItem && activeItem !== project, active: activeItem === project }"
+              class="project-title">
+              <span
+                class="stroke"
+                v-html="project.title" />
+              <span
+                class="fill"
+                v-html="project.title" />
+            </h3>
+            <div class="marquee-wrapper">
+              <marquee-text
+                :duration="10"
+                :repeat="5"
+                class="marquee">
+                <span
+                  class="project-subtitle"
+                  v-html="project.subtitle" />
+              </marquee-text>
+            </div>
           </li>
         </ul>
       </div>
@@ -45,7 +54,8 @@ export default {
     overline: 'What we did?',
     title: 'Selected Projects',
     text:
-      "We're collaborators by nature and we work side by side with customers who trust us, we believe in working <em>with</em> you rather than <em>for</em> you."
+      "We're collaborators by nature and we work side by side with customers who trust us, we believe in working <em>with</em> you rather than <em>for</em> you.",
+    activeItem: null
   }),
 
   computed: {
@@ -88,11 +98,40 @@ export default {
         font-weight: 600;
         line-height: 1.1;
         margin-bottom: 0.25rem;
-
-        transition: color 0.4s ease;
         text-transform: uppercase;
-        // text-decoration: underline;
+        transition: all 1s ease-out;
 
+        // spans
+
+        .stroke {
+          position: relative;
+          -webkit-text-stroke-width: 0.1px;
+          -webkit-text-stroke-color: var(--body-color);
+          -webkit-text-fill-color: transparent;
+        }
+
+        .fill {
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: var(--body-color);
+          transition: opacity 0.4s ease;
+        }
+
+        // state
+
+        // show stroke only
+        &.not-active {
+          .fill {
+            opacity: 0;
+          }
+        }
+
+        &.active {
+          // -webkit-text-fill-color: var(--body-color, $body-color);
+        }
+
+        // underline
 
         &:before,
         &:after {

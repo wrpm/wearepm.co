@@ -43,15 +43,16 @@
 // import {TimelineMax} from 'gsap'
 export default {
   name: 'ProcessList',
-  data() {
-    return {
-      activeStepIndex: 0
-    }
-  },
+
+  data: () => ({
+    activeStepIndex: 0
+  }),
+
   computed: {
     steps() {
       return this.$store.getters.processSteps
     },
+
     activeStep() {
       const step = this.steps[this.activeStepIndex]
       const index = this.activeStepIndex + 1
@@ -61,7 +62,9 @@ export default {
       }
     }
   },
+
   mounted() {},
+
   methods: {
     setActiveStepIndex(index) {
       this.activeStepIndex = index

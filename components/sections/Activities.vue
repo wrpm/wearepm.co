@@ -1,14 +1,12 @@
 <template>
-  <div
-    v-view.once="onceInViewHandler"
-    class="intro2">
-    <div class="intro__wrapper">
+  <div class="activities">
+    <div class="wrapper">
       <h2
         ref="title"
-        class="intro__title">
+        class="title">
         <span class="line">Strategy.</span>
         <span class="line">Design.</span>
-        <span class="line red">Development.</span>
+        <span class="line text-primary">Development.</span>
       </h2>
     </div>
   </div>
@@ -18,13 +16,12 @@
 import { TimelineMax } from 'gsap'
 
 export default {
-  name: 'Intro2',
+  name: 'Activities',
 
   data: () => ({}),
 
   mounted() {
-    this.initAnimation()
-    this.playAnimation()
+    // this.initAnimation()
   },
 
   methods: {
@@ -32,7 +29,6 @@ export default {
       const self = this
 
       const titleLines = self.$refs.title.querySelectorAll('.line')
-
       const els = [...titleLines]
 
       self.$timeline = new TimelineMax({
@@ -55,10 +51,6 @@ export default {
 
     playAnimation() {
       this.$timeline.play()
-    },
-
-    onceInViewHandler() {
-      this.playAnimation()
     }
   }
 }
@@ -66,23 +58,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.intro2 {
+.activities {
   height: calc(100vh);
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  .intro__wrapper {
+  .wrapper {
     display: flex;
     flex-direction: column;
     text-align: left;
 
-    .intro__title {
+    .title {
       padding-top: 1rem;
       padding-bottom: 1rem;
       margin: 0;
       font-size: 2rem;
-      font-weight: 600;
+      font-weight: 500;
       line-height: 1.2;
 
       @include media-breakpoint-up(md) {
@@ -101,7 +93,7 @@ export default {
         display: block;
         text-decoration: underline;
 
-        &.red {
+        &.text-primary {
           color: var(--primary, $primary);
         }
       }

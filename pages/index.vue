@@ -6,7 +6,7 @@
       <div class="site-content__container">
         <Intro />
         <About />
-        <Intro2 />
+        <Activities />
         <Capabilities />
         <!-- <Work /> -->
         <WorkList />
@@ -23,7 +23,7 @@ import pageHeadMixin from '@/mixins/pageHeadMixin'
 
 import Intro from '@/components/sections/Intro'
 import About from '@/components/sections/About'
-import Intro2 from '@/components/sections/Intro2'
+import Activities from '@/components/sections/Activities'
 import Capabilities from '@/components/sections/Capabilities'
 import Process from '@/components/sections/Process'
 import Work from '@/components/sections/Work'
@@ -37,7 +37,7 @@ export default {
   components: {
     Intro,
     About,
-    Intro2,
+    Activities,
     Capabilities,
     Work,
     WorkList,

@@ -41,28 +41,24 @@ export const state = () => ({
   ],
   selectedWork: [
     {
-      title: 'Infra Nova',
-      subtitle: 'Lorem ipsum dolor sit amet'
-    },
-    {
-      title: 'Jupyter',
-      subtitle: 'Cupidatat non proident'
+      title: 'Infranova',
+      subtitle: 'Website and brand identity for Swedish infrastructure technology consultant'
     },
     {
       title: 'Lupon Media',
-      subtitle: 'Esse cillum dolore eu fugiat'
+      subtitle: 'Website and illustrations for full-service online performance media company'
     },
     {
       title: 'New Startegy',
-      subtitle: 'Voluptate velit esse cillum dolore'
+      subtitle: 'Website and illustrations for business design consulting company'
     },
     {
       title: 'Hotel Nauta Perast',
-      subtitle: 'Dolor in reprehenderit in voluptate'
+      subtitle: 'Website and branding for Perast\'s Finest'
     },
     {
       title: 'Arizata',
-      subtitle: 'Online interior design services'
+      subtitle: 'Online interior design services, web design and development'
     },
     {
       title: 'Maximus AI',

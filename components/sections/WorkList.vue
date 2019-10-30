@@ -1,5 +1,6 @@
 <template>
   <div class="work-list">
+
     <div>
       <base-section-label
         ref="label"
@@ -11,6 +12,7 @@
         ref="description"
         :text="text" />
     </div>
+
     <div class="wrapper" >
       <div class="list-wrapper">
         <ul class="list">
@@ -108,6 +110,7 @@ export default {
           -webkit-text-stroke-width: 0.1px;
           -webkit-text-stroke-color: var(--body-color);
           -webkit-text-fill-color: transparent;
+          opacity: 0.4;
         }
 
         .fill {

@@ -76,7 +76,8 @@ export default {
   .switch {
     text-transform: uppercase;
     letter-spacing: 0.25px;
-    font-size: 0.8rem;
+    font-size: 10px;
+    letter-spacing: 0.5px;
     text-decoration: none;
     color: var(--body-color, $body-color);
   }

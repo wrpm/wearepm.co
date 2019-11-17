@@ -30,14 +30,12 @@ export default {
   data: () => ({
     showCoreOnly: false
   })
-
-  // mounted() {},
-  // methods: {}
 }
 </script>
 
 <style lang="scss" scoped>
 .capability-list {
+
   .title {
     margin-bottom: 1rem;
     text-decoration: underline;
@@ -53,9 +51,11 @@ export default {
     list-style: none;
 
     li {
-      font-size: $font-size-sm;
-      // color: rgba($body-color, 0.87);
       line-height: 2;
+
+      @include media-breakpoint-up(md) {
+        font-size: $font-size-sm;
+      }
     }
   }
 }

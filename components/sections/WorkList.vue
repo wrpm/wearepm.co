@@ -56,7 +56,7 @@ export default {
     overline: 'What we did?',
     title: 'Selected Projects',
     text:
-      "We're collaborators by nature and we work side by side with customers who trust us, we believe in working <em>with</em> you rather than <em>for</em> you.",
+      "Mission that led us to grow every day and helped us finish these projects is simple: Let’s use our passion to craft unique products and experiences to help clients excel in their business.",
     activeItem: null
   }),
 

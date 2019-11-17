@@ -30,7 +30,7 @@ export default {
     overline: 'Who we are?',
     title: 'An Independent Creative Studio',
     text:
-      "We're collaborators by nature and we work side by side with customers who trust us, we believe in working <em>with</em> you rather than <em>for</em> you."
+      "WRPM is a Belgrade based small creative studio focused on web design and web development. Although we are a young agency, between us we have 30+ years of experience. We approach every client’s project as if it is our own, striving to achieve memorable user experiences and long-lasting relationships."
   }),
 
   computed: {},

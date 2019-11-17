@@ -44,7 +44,7 @@ export default {
 
   data: () => ({
     overline: 'What are we looking for?',
-    title: 'Projects of<br/> interest in 2019',
+    title: 'Projects of<br/> interest in 2020',
     text: ''
   }),
 
@@ -52,19 +52,19 @@ export default {
     projects() {
       return [
         {
-          title: 'Landing Pages <br>for Tech Startups',
+          title: 'High Performing <br>Landing Pages <br>for Tech Startups',
           text:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.'
+            'Convert your visitors into customers by striking a sweet spot between form and function.'
         },
         {
-          title: 'Real Estate /<br>Property Development',
+          title: 'Interactive, <br>Lead Generating <br>Real Estate Websites',
           text:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.'
+            'Create a competitive edge providing immersive exploring experiences using our web-based 3D property navigator.'
         },
         {
-          title: 'Custom eShop /<br>Product Configurator',
+          title: 'Next Level <br>Custom eShops /<br>Product Configurators',
           text:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.'
+            'Your customers deserve a better platform to explore, visualize and personalize your awesome products.'
         }
       ]
     }

@@ -54,7 +54,7 @@ export const state = () => ({
     },
     {
       title: 'Hotel Nauta Perast',
-      subtitle: 'Website and branding for Perast\'s Finest'
+      subtitle: "Website and branding for Perast's Finest"
     },
     {
       title: 'Arizata',

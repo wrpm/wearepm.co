@@ -10,9 +10,6 @@
       <base-section-title
         ref="title"
         :title="title" />
-      <base-section-text
-        ref="description"
-        :text="text" />
     </div>
 
     <div class="section__content">
@@ -88,7 +85,6 @@ export default {
   data: () => ({
     overline: 'Contact',
     title: 'Get in',
-    text: '',
     ctaText: 'Touch'
   }),
 
@@ -151,7 +147,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .contact {
   display: flex;
@@ -172,11 +167,6 @@ export default {
       padding-bottom: 2rem;
       margin: 0;
       font-weight: 600;
-    }
-
-    .contact__text {
-      font-size: 20px;
-      margin: 0;
     }
   }
 }
@@ -200,7 +190,7 @@ export default {
 .touch-link__text {
   display: block;
   margin-bottom: 0;
-  font-size: 6rem;
+  font-size: 25vw;
   line-height: 0.75;
   letter-spacing: -1rem;
 
@@ -231,10 +221,14 @@ export default {
 
 .help {
   margin-top: 6rem;
-  margin-left: 12rem;
+  margin-left: 5rem;
   max-width: 300px;
   font-size: 0.875rem;
   line-height: 1.4;
+
+  @include media-breakpoint-up(md) {
+    margin-left: 12rem;
+  }
 
   .help-touch {
     position: relative;
@@ -257,6 +251,7 @@ export default {
 .col-touch {
   flex: 1;
 }
+
 .col-info {
   margin-left: auto;
 }

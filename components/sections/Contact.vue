@@ -1,6 +1,5 @@
 <template>
-  <div
-    v-view.once="onceInViewHandler"
+  <section
     class="contact" >
 
     <div class="contact__wrapper">
@@ -13,8 +12,8 @@
     </div>
 
     <div class="section__content">
-
       <div class="row">
+
         <div class="col-touch">
           <a
             href="mailto:office@wearepm.co"
@@ -23,64 +22,32 @@
               class="touch-link__text"
               v-html="ctaText" />
           </a>
-
           <div class="help">
             <p class="help-touch">Click "Touch" and say hi.</p>
             <p class="help-follow">Follow us on <a href="#">Instagram</a>, <a href="#">Facebook</a>, or <a href="#">LinkedIn</a> to stay up to date.</p>
           </div>
-
         </div>
 
         <div class="col-info">
-          <div class="info">
-            <div class="info-block">
-              <h5 class="info-title">WRPM DOO</h5>
-              <p>Bulevar kralja Aleksandra 124 / 6<br>11000 Belgrade, Serbia</p>
-              <a
-                href="#"
-                title="">Find us on map</a>
-            </div>
-
-            <div class="info-block">
-              <h5 class="info-title">Phone</h5>
-              <p>
-                <a
-                  href="tel:+381604206043"
-                  title="call us">+381 60 4206043</a>
-              </p>
-            </div>
-
-            <div class="info-block">
-              <h5 class="info-title">General</h5>
-              <p>
-                <a
-                  href="mailto:office@wearepm.co"
-                  title="call us">office@wearepm.co</a>
-              </p>
-            </div>
-
-            <div class="info-block">
-              <h5 class="info-title">New Business</h5>
-              <p>
-                <a
-                  href="mailto:new@wearepm.co"
-                  title="call us">new@wearepm.co</a>
-              </p>
-            </div>
-          </div>
+          <ContactInfo />
         </div>
-      </div>
 
+      </div>
     </div>
 
-  </div>
+  </section>
 </template>
 
 <script>
 import { TimelineMax } from 'gsap'
+import ContactInfo from '@/components/contact/ContactInfo'
 
 export default {
   name: 'Contact',
+
+  components: {
+    ContactInfo
+  },
 
   data: () => ({
     overline: 'Contact',
@@ -88,62 +55,8 @@ export default {
     ctaText: 'Touch'
   }),
 
-  mounted() {
-    this.initAnimation()
-  },
-
-  methods: {
-    initAnimation() {
-      const self = this
-
-      const els = [
-        self.$refs.label.$refs.label,
-        self.$refs.title,
-        self.$refs.description
-      ]
-
-      self.$timeline = new TimelineMax({
-        paused: true,
-        delay: 0.7
-      })
-
-      self.$timeline
-        .staggerFrom(
-          els,
-          0.8,
-          {
-            y: 40,
-            autoAlpha: 0,
-            ease: 'Power1.easeOut',
-            clearProps: 'all'
-          },
-          0.15
-        )
-        .from(
-          self.$refs.label.$refs.line,
-          0.5,
-          {
-            scaleX: 0,
-            ease: 'Power1.easeOut',
-            onStart: function() {
-              this.target.style.transformOrigin = 'left center'
-            },
-            onComplete: function() {
-              this.target.removeAttribute('style')
-            }
-          },
-          0.4
-        )
-    },
-
-    playAnimation() {
-      this.$timeline.play()
-    },
-
-    onceInViewHandler() {
-      this.playAnimation()
-    }
-  }
+  mounted() {},
+  methods: {}
 }
 </script>
 
@@ -152,8 +65,13 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 20vh;
-  padding-bottom: 20vh;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 20vh;
+    padding-bottom: 10vh;
+  }
 
   .contact__wrapper {
     display: flex;
@@ -192,10 +110,10 @@ export default {
   margin-bottom: 0;
   font-size: 25vw;
   line-height: 0.75;
-  letter-spacing: -1rem;
 
   @include media-breakpoint-up(md) {
     font-size: 11rem;
+    letter-spacing: -1rem;
   }
 
   @include media-breakpoint-up(lg) {
@@ -221,13 +139,12 @@ export default {
 
 .help {
   margin-top: 6rem;
-  margin-left: 5rem;
-  max-width: 300px;
   font-size: 0.875rem;
   line-height: 1.4;
 
   @include media-breakpoint-up(md) {
     margin-left: 12rem;
+    max-width: 300px;
   }
 
   .help-touch {
@@ -237,44 +154,42 @@ export default {
     &:before {
       content: "\2191\2191\2191"; // upward arrow
       position: absolute;
-      left: -5rem;
+      top: -2rem;
+      left: 0;
       font-size: 1.25rem;
       font-weight: 400;
       letter-spacing: -1px;
       animation: moveArrows 1s infinite  alternate;
+
+      @include media-breakpoint-up(md) {
+        top: 0;
+        left: -5rem;
+        animation: moveArrows 1s infinite  alternate;
+      }
     }
   }
 
-  .help-follow {}
+  .help-follow {
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
 }
 
 .col-touch {
   flex: 1;
+  margin-bottom: 4rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
 }
 
 .col-info {
-  margin-left: auto;
-}
 
-.info {
-  .info-block {
-    margin-bottom: 1.5rem;
-    font-size: $font-size-sm;
-  }
-
-  .info-title {
-    text-transform: uppercase;
-    font-size: $font-size-sm;
-    color: var(--black, $black);
-  }
-
-  p {
-    margin-bottom: 0.5rem;
-  }
-
-  a {
-    color: var(--body-color, $body-color);
-    text-decoration: underline;
+  @include media-breakpoint-up(md) {
+    margin-left: auto;
   }
 }
 

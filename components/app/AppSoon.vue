@@ -1,5 +1,7 @@
 <template>
-  <div class="soon">
+  <div
+    class="soon"
+    @click="randomTheme">
     <svg
       class="circle"
       xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +73,12 @@ export default {
   // data: () => ({}),
   // computed: {},
   // mounted() {},
-  // methods: {}
+
+  methods: {
+    randomTheme() {
+      this.$store.dispatch('theme/SET_RANDOM_THEME')
+    }
+  }
 }
 </script>
 
@@ -82,6 +89,8 @@ export default {
   height: 80px;
   display: none;
   margin-bottom: 3rem;
+  pointer-events: auto;
+  cursor: pointer;
 
   @include media-breakpoint-up(md) {
     display: block;

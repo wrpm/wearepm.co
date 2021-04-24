@@ -1,68 +1,39 @@
 <template>
-  <div class="activities">
+  <section class="activities">
     <div class="wrapper">
       <h2
         ref="title"
         class="title">
-        <span class="line">Strategy.</span>
         <span class="line">Design.</span>
         <span class="line text-primary">Development.</span>
       </h2>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 import { TimelineMax } from 'gsap'
 
 export default {
-  name: 'Activities',
+  name: 'Activities'
 
-  data: () => ({}),
-
-  mounted() {
-    // this.initAnimation()
-  },
-
-  methods: {
-    initAnimation() {
-      const self = this
-
-      const titleLines = self.$refs.title.querySelectorAll('.line')
-      const els = [...titleLines]
-
-      self.$timeline = new TimelineMax({
-        paused: true,
-        delay: 0.7
-      })
-
-      self.$timeline.staggerFrom(
-        els,
-        0.8,
-        {
-          y: 40,
-          autoAlpha: 0,
-          ease: 'Power1.easeOut',
-          clearProps: 'all'
-        },
-        0.15
-      )
-    },
-
-    playAnimation() {
-      this.$timeline.play()
-    }
-  }
+  // data: () => ({}),
+  // mounted() {},
+  // methods: {}
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .activities {
-  height: calc(100vh);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  @include media-breakpoint-up(md) {
+    height: 100vh;
+  }
 
   .wrapper {
     display: flex;
@@ -73,7 +44,7 @@ export default {
       padding-top: 1rem;
       padding-bottom: 1rem;
       margin: 0;
-      font-size: 2rem;
+      font-size: 12vw;
       font-weight: 500;
       line-height: 1.2;
 
@@ -86,7 +57,7 @@ export default {
       @include media-breakpoint-up(xl) {
         padding-top: 3rem;
         padding-bottom: 3rem;
-        font-size: 6rem;
+        font-size: 8rem;
       }
 
       span {

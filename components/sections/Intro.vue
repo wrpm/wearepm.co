@@ -8,7 +8,7 @@
         :label="overline">
         <small
           ref="labelSmall"
-          class="d-block text-muted">
+          class="pronunciation d-block">
           or short <abbr title="We Are PM">WRPM</abbr> (pronounced /wi ɑr ˈpiˈɛm/)
         </small>
       </base-section-label>
@@ -96,7 +96,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .intro {
-  height: calc(100vh);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,6 +105,13 @@ export default {
     display: flex;
     flex-direction: column;
     text-align: left;
+    margin-top: auto;
+    margin-bottom: 30vh;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
 
     .intro__title {
       padding-top: 1rem;
@@ -131,6 +138,11 @@ export default {
     .intro__text {
       font-size: 20px;
       margin: 0;
+    }
+
+    .pronunciation {
+      color: var(--body-color, $body-color);
+      opacity: 0.72;
     }
   }
 }

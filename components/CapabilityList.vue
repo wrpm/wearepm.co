@@ -11,7 +11,13 @@
       <li
         v-for="(item, index) in group.list"
         :key="index"
-        :class="{ core: item.core, hide: showCoreOnly && !item.core }"
+        :class="[
+          item.class ? item.class : '',
+          {
+            core: item.core,
+            hide: showCoreOnly && !item.core,
+          }
+        ]"
         v-html="item.title" />
     </ul>
   </div>
@@ -20,6 +26,7 @@
 <script>
 export default {
   name: 'CapabilityList',
+
   props: {
     group: {
       type: Object,
@@ -51,10 +58,24 @@ export default {
     list-style: none;
 
     li {
+      position: relative;
       line-height: 2;
 
       @include media-breakpoint-up(md) {
         font-size: $font-size-sm;
+      }
+
+      &.hot {
+        font-weight: bold;
+
+        &:before {
+          // U+1F525
+          content: "\1F525";
+          position: absolute;
+          left: -1.5rem;
+          top: 0;
+          line-height: 2;
+        }
       }
     }
   }

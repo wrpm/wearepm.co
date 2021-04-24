@@ -1,8 +1,9 @@
 <template>
-  <div
+  <section
     v-view.once="onceInViewHandler"
     class="process">
     <div class="process__wrapper">
+
       <base-section-label
         ref="label"
         :label="overline"/>
@@ -15,22 +16,25 @@
       <base-section-text
         ref="description2"
         :text="text2" />
+
       <div class="process__list">
         <process-steps />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
-import ProcessSteps from '~/components/ProcessSteps'
 import { TimelineMax } from 'gsap'
+import ProcessSteps from '~/components/ProcessSteps'
 
 export default {
   name: 'Process',
+
   components: {
     ProcessSteps
   },
+
   data: () => ({
     overline: 'How we do it?',
     title: 'Our Process',
@@ -39,10 +43,13 @@ export default {
     text2:
       'Our process is built to discover and deliver your idea through cutting-edge digital experiences and exceptional products.'
   }),
+
   computed: {},
+
   mounted() {
     this.initAnimation()
   },
+
   methods: {
     initAnimation() {
       const self = this
@@ -58,41 +65,28 @@ export default {
         // ...listItems
       ]
 
-      self.$timeline = new TimelineMax({ paused: true, delay: 0.7 })
-
-      // self.$timeline.set(listItems, {
-      //   css: {
-      //     transition: 'none'
-      //   }
-      // })
+      self.$timeline = new TimelineMax({
+        paused: true,
+        delay: 0.7
+      })
 
       self.$timeline
-        .staggerFrom(
-          els,
-          0.8,
-          {
-            y: 40,
-            autoAlpha: 0,
-            ease: 'Power1.easeOut',
-            clearProps: 'all'
+        .staggerFrom(els, 0.8, {
+          y: 40,
+          autoAlpha: 0,
+          ease: 'Power1.easeOut',
+          clearProps: 'all'
+        }, 0.15)
+        .from(self.$refs.label.$refs.line, 0.5, {
+          scaleX: 0,
+          ease: 'Power1.easeOut',
+          onStart: function() {
+            this.target.style.transformOrigin = 'left center'
           },
-          0.15
-        )
-        .from(
-          self.$refs.label.$refs.line,
-          0.5,
-          {
-            scaleX: 0,
-            ease: 'Power1.easeOut',
-            onStart: function() {
-              this.target.style.transformOrigin = 'left center'
-            },
-            onComplete: function() {
-              this.target.removeAttribute('style')
-            }
-          },
-          0.4
-        )
+          onComplete: function() {
+            this.target.removeAttribute('style')
+          }
+        }, 0.4)
     },
 
     playAnimation() {
@@ -108,11 +102,16 @@ export default {
 
 <style lang="scss" scoped>
 .process {
-  padding-top: 20vh;
-  padding-bottom: 20vh;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+  }
 
   .process__wrapper {
     display: flex;
@@ -122,6 +121,10 @@ export default {
 }
 
 .process__list {
-  margin-top: 20vh;
+  margin-top: 4rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 20vh;
+  }
 }
 </style>

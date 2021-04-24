@@ -7,7 +7,7 @@
   "taxID": 111166323,
   "address": {
      "@type": "PostalAddress",
-     "streetAddress": "Gružanska 24",
+     "streetAddress": "Niška 16",
      "addressLocality": "Belgrade",
      "postalCode": "11000",
      "addressCountry": "Serbia"
@@ -15,9 +15,6 @@
   "description": "WRPM is an independent web design and development agency that creates progress by designing, building and growing consumer-facing digital solutions crafted to solve unique business challenges.",
   "logo" : "https://wearepm.co/logo/wrpm-logo@2x.png",
   "founders": [
-    {
-      "@id": "https://wearepm.co/#person-np"
-    },
     {
       "@id": "https://wearepm.co/#person-vm"
     }

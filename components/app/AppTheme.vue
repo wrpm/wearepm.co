@@ -3,8 +3,8 @@
     <button
       ref="switch"
       class="switch"
-      @click="toggleTheme"
-      v-html="label" />
+      v-html="label"
+      @click="toggleTheme" />
   </div>
 </template>
 
@@ -14,36 +14,56 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'AppTheme',
 
+  data: () => ({
+    isLight: true,
+    activeThemeIndex: 0
+  }),
+
   computed: {
-    ...mapGetters([
-      'isLight'
+    ...mapGetters('theme', [
+      'themes',
+      'activeTheme'
     ]),
+
+    themeKeys() {
+      return this.themes.keys()
+    },
 
     label() {
       return this.isLight ? 'Dark mode' : 'Light mode'
     },
 
     cssVars() {
-      const BLACK = '#000000'
-      const WHITE = '#ffffff'
-      // backgrund
-      const BG = '#fafafa'
-      // foreground
-      const FG = '#0e0e0e'
-
       return {
-        '--body-color': this.isLight ? FG : BG,
-        '--body-bg': this.isLight ? BG : FG,
-        '--white': this.isLight ? WHITE : BLACK,
-        '--black': this.isLight ? BLACK : WHITE
+        '--primary': this.activeTheme.primary,
+        '--body-color': this.activeTheme.foreground,
+        '--body-bg': this.activeTheme.backgrund
       }
+    },
+  },
+
+  watch: {
+    activeTheme: function (val) {
+      this.isLight = val.isLight
+      this.setStyles()
     }
   },
 
   methods: {
+    setDarkTheme() {
+      this.$store.dispatch('theme/SET_THEME', 'wrpmDark')
+    },
+
+    setLightTheme() {
+      this.$store.dispatch('theme/SET_THEME', 'wrpmLight')
+    },
+
     toggleTheme() {
-      this.$store.commit('TOGGLE', 'isLight')
-      this.setStyles()
+      if (this.isLight) {
+        this.setDarkTheme()
+      } else {
+        this.setLightTheme()
+      }
     },
 
     setStyles() {

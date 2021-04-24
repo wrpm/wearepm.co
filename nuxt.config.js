@@ -12,7 +12,7 @@ module.exports = {
 
   env: {
     baseUrl: process.env.APP_URL || 'http://localhost:3000',
-    version: pkg.version || '1.0.0'
+    version: pkg.version || '1.0.1'
   },
 
   /*

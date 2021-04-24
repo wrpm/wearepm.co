@@ -1,31 +1,30 @@
 <template>
   <nav class="app-contact">
     <div
-      v-for="(item, index) in items"
-      :key="index"
       class="nav__item">
-      <base-button
-        :icon="item.icon"
-        :icon-alt="item.title"
-        :url="item.url"
-      />
+      <IconButton
+        url="mailto:office@wearepm.co"
+        alt="contact us">
+        <!-- <SvgIconSend
+          alt="contact us"
+          class="icon"
+          role="img" /> -->
+      </IconButton>
     </div>
   </nav>
 </template>
 
 <script>
-export default {
-  name: 'AppContact',
+// import SvgIconSend from '~/assets/img/icons/send.svg?inline'
 
-  data: () => ({
-    items: [
-      {
-        title: 'Contact us',
-        icon: 'send.svg',
-        url: 'mailto:office@wearepm.co'
-      }
-    ]
-  })
+export default {
+  name: 'SvgIconSend',
+
+  components: {
+    // SvgIconSend
+  },
+
+  data: () => ({})
 }
 </script>
 

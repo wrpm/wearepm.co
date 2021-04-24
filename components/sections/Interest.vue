@@ -3,6 +3,7 @@
     v-view.once="onceInViewHandler"
     class="interest">
     <div class="interest__wrapper">
+
       <base-section-label
         ref="label"
         :label="overline"/>
@@ -18,7 +19,7 @@
           <div
             v-for="(project, index) in projects"
             :key="index"
-            class="project-col col-lg-4">
+            class="project-col col-lg-4 offset-md-1 offset-lg-0">
             <InterestProject
               :index="index"
               :title="project.title"
@@ -33,18 +34,18 @@
 
 <script>
 import { TimelineMax } from 'gsap'
-// import Stripes from '~/components/Stripes'
 import InterestProject from '~/components/InterestProject'
 
 export default {
   name: 'Interest',
+
   components: {
     InterestProject
   },
 
   data: () => ({
     overline: 'What are we looking for?',
-    title: 'Projects of<br/> interest in 2020',
+    title: 'Projects of <br>interest in 2021',
     text: ''
   }),
 
@@ -52,20 +53,25 @@ export default {
     projects() {
       return [
         {
+          title: 'Next Level <br>eCommerce <br>Experiences',
+          text:
+            'Your customers deserve a better platform to explore, visualize and personalize your awesome products.'
+        },
+        {
           title: 'High Performing <br>Landing Pages <br>for Tech Startups',
           text:
             'Convert your visitors into customers by striking a sweet spot between form and function.'
-        },
-        {
-          title: 'Interactive, <br>Lead Generating <br>Real Estate Websites',
-          text:
-            'Create a competitive edge providing immersive exploring experiences using our web-based 3D property navigator.'
-        },
-        {
-          title: 'Next Level <br>Custom eShops /<br>Product Configurators',
-          text:
-            'Your customers deserve a better platform to explore, visualize and personalize your awesome products.'
         }
+        // {
+        //   title: 'Interactive, <br>Lead Generating <br>Real Estate Websites',
+        //   text:
+        //     'Create a competitive edge providing immersive exploring experiences using our web-based 3D property navigator.'
+        // }
+        // {
+        //   title: 'Next Level <br>Custom eShops /<br>Product Configurators',
+        //   text:
+        //     'Your customers deserve a better platform to explore, visualize and personalize your awesome products.'
+        // }
       ]
     }
   },
@@ -84,35 +90,28 @@ export default {
         self.$refs.description
       ]
 
-      self.$timeline = new TimelineMax({ paused: true, delay: 0.7 })
+      self.$timeline = new TimelineMax({
+        paused: true,
+        delay: 0.7
+      })
 
       self.$timeline
-        .staggerFrom(
-          els,
-          0.8,
-          {
-            y: 40,
-            autoAlpha: 0,
-            ease: 'Power1.easeOut',
-            clearProps: 'all'
+        .staggerFrom( els, 0.8, {
+          y: 40,
+          autoAlpha: 0,
+          ease: 'Power1.easeOut',
+          clearProps: 'all'
+        }, 0.15)
+        .from(self.$refs.label.$refs.line, 0.5, {
+          scaleX: 0,
+          ease: 'Power1.easeOut',
+          onStart: function() {
+            this.target.style.transformOrigin = 'left center'
           },
-          0.15
-        )
-        .from(
-          self.$refs.label.$refs.line,
-          0.5,
-          {
-            scaleX: 0,
-            ease: 'Power1.easeOut',
-            onStart: function() {
-              this.target.style.transformOrigin = 'left center'
-            },
-            onComplete: function() {
-              this.target.removeAttribute('style')
-            }
-          },
-          0.4
-        )
+          onComplete: function() {
+            this.target.removeAttribute('style')
+          }
+        }, 0.4)
     },
 
     playAnimation() {
@@ -151,6 +150,11 @@ export default {
 }
 
 .project-col {
-  padding-right: 2rem;
+  margin-bottom: 3rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 0;
+    padding-right: 2rem;
+  }
 }
 </style>

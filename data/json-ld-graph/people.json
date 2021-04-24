@@ -1,19 +1,6 @@
 [
   {
     "@type": "Person",
-    "@id": "https://wearepm.co/#person-np",
-    "name": "Nikola Plavsic",
-    "email": "nikola.plavsic@wearepm.co",
-    "sameAs" : [
-      "https://www.facebook.com/nikolaplavsic87",
-      "https://www.linkedin.com/in/plavsicnikola/",
-      "https://twitter.com/plaximaxi",
-      "https://www.behance.net/nikolaplavsic",
-      "https://github.com/nikolaplavsic"
-    ]
-  },
-  {
-    "@type": "Person",
     "@id": "https://wearepm.co/#person-vm",
     "name": "Velimir Matic",
     "email": "velimir.matic@wearepm.co",
@@ -26,5 +13,5 @@
       "https://www.behance.net/veljamatic",
       "https://github.com/veljamatic"
     ]
-  },
+  }
 ]

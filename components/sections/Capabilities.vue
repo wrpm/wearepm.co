@@ -19,6 +19,7 @@
           <div
             v-for="(capabilityGroup, index) in capabilities"
             :key="index"
+            :class="{ 'offset-lg-3': index === 0 }"
             class="list-group col-md-6 col-lg-3 offset-1 offset-md-0">
             <capability-list
               :group="capabilityGroup" />
@@ -31,8 +32,8 @@
 </template>
 
 <script>
-import CapabilityList from '~/components/CapabilityList'
 import { TimelineMax } from 'gsap'
+import CapabilityList from '@/components/CapabilityList'
 
 export default {
   name: 'Capabilities',
@@ -45,7 +46,7 @@ export default {
     overline: 'What does WRPM do?',
     title: 'Our Services & Capabilities',
     text:
-      'Our talented creatives and developers come together to design and build consumer-facing digital solutions crafted to solve unique business challenges'
+      'Our talented creatives and developers come together to design and build consumer-facing digital solutions crafted to solve unique business challenges.'
   }),
 
   computed: {
@@ -89,7 +90,7 @@ export default {
           onComplete: function() {
             this.target.removeAttribute('style')
           }
-        }, 0.4 )
+        }, 0.4)
     },
 
     playAnimation() {
@@ -125,6 +126,4 @@ export default {
     }
   }
 }
-
-
 </style>

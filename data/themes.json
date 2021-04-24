@@ -1,0 +1,79 @@
+{
+  "defaults": {
+    "primary": "#f00f1e",
+    "foreground": "#0e0e0e",
+    "backgrund": "#fafafa",
+    "isLight": true
+  },
+  "themes": {
+    "wrpmLight": {
+      "tag": "wrpm",
+      "primary": "#f00f1e",
+      "foreground": "#0e0e0e",
+      "backgrund": "#fafafa",
+      "isLight": true
+    },
+    "wrpmDark": {
+      "tag": "wrpm",
+      "primary": "#f00f1e",
+      "foreground": "#fafafa",
+      "backgrund": "#0e0e0e",
+      "isLight": false
+    },
+    "blue02": {
+      "tag": "color",
+      "primary": "#f00f1e",
+      "foreground": "#fafafa",
+      "backgrund": "#183459",
+      "isLight": false
+    },
+    "lightGreen": {
+      "tag": "color",
+      "foreground": "#fafafa",
+      "backgrund": "#8FBABF",
+      "isLight": false
+    },
+    "darkGreen": {
+      "tag": "color",
+      "foreground": "#fafafa",
+      "backgrund": "#032620",
+      "isLight": false
+    },
+    "lightRed": {
+      "tag": "color",
+      "foreground": "#0e0e0e",
+      "backgrund": "#F2B29B",
+      "isLight": true
+    },
+    "blue03": {
+      "tag": "color",
+      "foreground": "#fafafa",
+      "backgrund": "#0339A6",
+      "isLight": false
+    },
+    "skin": {
+      "tag": "color",
+      "foreground": "#0e0e0e",
+      "backgrund": "#BFAB99",
+      "isLight": false
+    },
+    "blue04": {
+      "tag": "color",
+      "foreground": "#fafafa",
+      "backgrund": "#010326",
+      "isLight": false
+    },
+    "yellow": {
+      "tag": "color",
+      "foreground": "#0e0e0e",
+      "backgrund": "#F2C641",
+      "isLight": true
+    },
+    "purple": {
+      "tag": "color",
+      "foreground": "#fafafa",
+      "backgrund": "#59054B",
+      "isLight": false
+    }
+  }
+}

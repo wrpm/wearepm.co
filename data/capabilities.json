@@ -1,22 +1,5 @@
 [
   {
-    "title": "Strategy",
-    "list": [
-      {
-        "title": "Discovery & Research",
-        "core": true
-      },
-      {
-        "title": "Design Exploration",
-        "core": true
-      },
-      {
-        "title": "Content Strategy",
-        "core": true
-      }
-    ]
-  },
-  {
     "title": "Design",
     "list": [
       {
@@ -29,10 +12,6 @@
       },
       {
         "title": "Logo & Branding",
-        "core": true
-      },
-      {
-        "title": "Print & Packaging",
         "core": true
       },
       {
@@ -59,9 +38,11 @@
       {
         "title": "CMS & Platform Builds",
         "core": true
-      }, {
+      },
+      {
         "title": "eCommerce",
-        "core": true
+        "core": true,
+        "class": "hot"
       },
       {
         "title": "Prototyping",
@@ -70,14 +51,18 @@
     ]
   },
   {
-    "title": "Content",
+    "title": "& more",
     "list": [
       {
-        "title": "Copywriting",
+        "title": "Discovery & Research",
         "core": true
       },
       {
-        "title": "Social Media",
+        "title": "Design Exploration",
+        "core": true
+      },
+      {
+        "title": "Consulting",
         "core": true
       }
     ]

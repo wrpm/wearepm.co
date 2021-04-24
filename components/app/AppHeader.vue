@@ -50,9 +50,9 @@ export default {
 
 <style lang="scss" scoped>
 .app-header {
-  position: fixed;
+  position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
   padding: $app-padding;
@@ -60,6 +60,8 @@ export default {
   z-index: 100;
 
   @include media-breakpoint-up(md) {
+    position: fixed;
+    height: 100%;
     padding: $app-padding-md;
   }
 }

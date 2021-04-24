@@ -1,5 +1,5 @@
 <template>
-  <div class="work-list">
+  <section class="work-list">
 
     <div>
       <base-section-label
@@ -13,7 +13,7 @@
         :text="text" />
     </div>
 
-    <div class="wrapper" >
+    <div class="wrapper">
       <div class="list-wrapper">
         <ul class="list">
           <li
@@ -45,7 +45,7 @@
         </ul>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -65,6 +65,7 @@ export default {
       return this.$store.getters.selectedWork
     }
   },
+
   mounted() {},
   methods: {}
 }
@@ -73,6 +74,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .work-list {
+
   .wrapper {
     position: relative;
     padding-top: 10vh;
@@ -150,7 +152,7 @@ export default {
         }
 
         &:before {
-          background: var(--black, $black);
+          background: var(--body-color, $body-color);
         }
 
         &:after {
@@ -183,13 +185,7 @@ export default {
         white-space: nowrap;
 
         &:after {
-          // content: "\00d7"; // x
-          // content: "\2219"; // bullet
-          // content: "\2014"; // em dash
-          // content: "\2666"; // diamond
           content: "\2191"; // upward arrow
-
-
           display: inline-block;
           padding: 0 0.5rem;
         }

@@ -6,7 +6,8 @@
       class="nav__item">
 
       <IconButton
-        :url="profile.url">
+        :url="profile.url"
+        :alt="profile.text">
         <component
           :is="iconComponent(profile)"
           :alt="profile.text"

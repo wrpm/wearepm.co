@@ -1,7 +1,7 @@
 {
   "@type": "WebSite",
   "@id": "https://wearepm.co/#website",
-  "url": "https://wearepm.co/",
+  "url": "https://wearepm.co",
   "name": "WRPM",
   "publisher": {
     "@id": "https://wearepm.co/#Organization"

@@ -2,7 +2,7 @@
   <div class="process-steps row-container">
     <div class="row">
 
-      <div class="col-md-8 offset-md-2 col--list">
+      <div class="col--list col-lg-10 col-xl-8 offset-md-1 offset-lg-2">
         <ol class="process-list">
           <li
             v-for="(step, index) in steps"
@@ -16,7 +16,7 @@
         </ol>
       </div>
 
-      <div class="col-md-8 offset-md-2 col--content">
+      <div class="col--content col-lg-10 col-xl-8 offset-md-1 offset-lg-2">
         <transition-group
           name="step"
           tag="div"
@@ -97,9 +97,10 @@ export default {
   padding: 0;
   list-style: none;
 
+  // list line
   @include media-breakpoint-up(md) {
     flex-direction: row;
-    border-top: 1px solid var(--black, $black);
+    border-top: 1px solid var(--body-color, $body-color);
 
     &:after {
       content: '';
@@ -109,20 +110,25 @@ export default {
       height: 0;
       top: -1px;
       left: 100%;
-      border-top: 1px dashed var(--black, $black);
+      border-top: 1px dashed var(--body-color, $body-color);
     }
   }
 
   li {
     position: relative;
     display: block;
-    line-height: 2;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    line-height: 1.4;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 
     @include media-breakpoint-up(md) {
       flex: 0 0 25%;
+      display: flex;
+      flex-direction: column;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
 
+      // circle
       &:before {
         content: '';
         position: absolute;
@@ -138,6 +144,7 @@ export default {
         transition: all 0.2s ease-out;
       }
 
+      // dot
       &:after {
         content: '';
         position: absolute;
@@ -146,23 +153,25 @@ export default {
         height: 9px;
         top: 0;
         left: 0;
-        background-color: var(--black, $black);
+        background-color: var(--body-color, $body-color);
         border-radius: 50%;
         border: 2px solid var(--body-bg, $body-bg);
         transform: translate(-50%, -50%);
         transition: all 0.3s ease-in-out;
       }
     }
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
   }
 }
 
 .process-list__item {
-  // color: rgba($body-color, 0.56);
   transition: color 0.4s ease;
   cursor: pointer;
 
   &.active {
-    // color: rgba($body-color, 1);
     font-weight: 500;
 
     // circle

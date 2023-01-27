@@ -27,8 +27,8 @@ export default {
   name: 'Intro',
 
   data: () => ({
-    overline: 'Hello, We Are PM',
-    headline: 'We design and build great websites for growing businesses'
+    overline: '00 ——— Hello, We Are PM',
+    headline: 'Designing and building superior digital products & experiences'
   }),
 
   mounted() {

@@ -39,7 +39,7 @@ export default {
     overline: 'How we do it?',
     title: 'Our Process',
     text:
-      "We're collaborators by nature and we work side by side with clients who trust us, we believe in working <em>with</em> you rather than <em>for</em> you.",
+      "We're collaborators by nature and we work side by side with clients who trust us. We prefer working <em>with</em> you rather than <em>for</em> you.",
     text2:
       'Our process is built to discover and deliver your idea through cutting-edge digital experiences and exceptional products.'
   }),

@@ -4,21 +4,6 @@
       class="site-content"
       role="main">
 
-      <!-- grid lines -->
-      <!-- <div class="grid-lines">
-        <div class="grid-lines__container">
-          <div class="row">
-            <div
-              v-for="i in 12"
-              :key="`grid-line-${i}`"
-              :class="[ `col--${i}` ]"
-              class="col-1">
-              <div class="lines" />
-            </div>
-          </div>
-        </div>
-      </div> -->
-
       <!-- content -->
       <div class="site-content__container">
         <Intro />
@@ -26,11 +11,13 @@
         <Trail />
         <Activities />
         <Capabilities />
-        <WorkList />
-        <Process />
-        <Interest />
+        <!-- <MarqueeTech /> -->
+        <!-- <WorkList /> -->
+        <!-- <Process /> -->
+        <!-- <Interest />'' -->
         <Contact />
       </div>
+
     </main>
   </div>
 </template>
@@ -43,6 +30,7 @@ import About from '@/components/sections/About'
 import Trail from '@/components/sections/Trail'
 import Activities from '@/components/sections/Activities'
 import Capabilities from '@/components/sections/Capabilities'
+import MarqueeTech from '@/components/sections/MarqueeTech'
 import Process from '@/components/sections/Process'
 import Work from '@/components/sections/Work'
 import WorkList from '@/components/sections/WorkList'
@@ -58,6 +46,7 @@ export default {
     Trail,
     Activities,
     Capabilities,
+    MarqueeTech,
     Work,
     WorkList,
     Process,
@@ -89,31 +78,27 @@ export default {
 </script>
 
 <style lang="scss">
+
+// Padding generation
+@mixin make-padding-map($paddings: $content-paddings) {
+  @each $breakpoint, $value in map-keys($paddings) {
+    @include media-breakpoint-up($breakpoint) {
+      padding-left: $value;
+      padding-right: $value;
+    }
+  }
+}
+
 .page--index {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  padding: 0 $app-padding;
+  padding: 0;
   z-index: 1;
   overflow: hidden;
-}
 
-@mixin content-padding {
-  @include media-breakpoint-up(md) {
-    padding-left: 80px;
-    padding-right: 80px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    padding-left: 120px;
-    padding-right: 120px;
-  }
-
-  @include media-breakpoint-up(xl) {
-    padding-left: 160px;
-    padding-right: 160px;
-  }
+  @include make-padding-map($app-paddings);
 }
 
 .grid-lines {
@@ -136,7 +121,7 @@ export default {
 
   .grid-lines__container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: auto;
     height: 100%;
   }
@@ -156,12 +141,13 @@ export default {
 }
 
 .site-content {
-  @include content-padding;
 
   .site-content__container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: auto;
   }
+
+  @include make-padding-map($content-paddings);
 }
 </style>

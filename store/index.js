@@ -45,19 +45,25 @@ export const state = () => ({
       title: 'Samsung',
       url: 'https://gigatron.rs/samsung',
       subtitle:
-        'Shop-In-Shop web app for Adriatic region'
-    },
-    {
-      title: 'Studio Direction',
-      url: 'https://direction.studio',
-      subtitle:
-        'Design studio powered by CreITive'
+        'Shop-In-Shop Platform'
     },
     {
       title: 'New Startegy',
       url: 'http://newstartegy.com/',
       subtitle:
         'Website and illustrations for business design consulting company'
+    },
+    {
+      title: 'Studio Direction',
+      url: 'https://direction.studio',
+      subtitle:
+        'Website development for design studio'
+    },
+    {
+      title: 'PhiAcademy',
+      url: 'http://phi-academy.com/',
+      subtitle:
+        'Designed by Studio Direction. Developed by WRPM'
     }
   ]
 })

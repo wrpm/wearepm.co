@@ -7,9 +7,11 @@
       <base-section-label
         ref="label"
         :label="overline"/>
+
       <base-section-title
         ref="title"
         :title="title" />
+
       <base-section-text
         ref="description"
         :text="text" />
@@ -45,7 +47,7 @@ export default {
 
   data: () => ({
     overline: 'What are we looking for?',
-    title: 'Projects of <br>interest in 2021',
+    title: 'Projects<br> <em>— of interest in 2021</em>',
     text: ''
   }),
 

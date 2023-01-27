@@ -5,15 +5,28 @@ $red:     rgb(240, 15, 30);
 $body-bg:                   #fafafa;
 $body-color:                #0e0e0e;
 
-$primary:       $red;
+$primary:                   $red;
 
 $app-padding: 40px;
-$app-padding-md: 40px;
+
+$app-paddings: (
+  xs: 20px,
+  sm: 40px
+);
+
+$content-paddings: (
+  xs: 20px,
+  sm: 40px,
+  md: 100px,
+  lg: 160px,
+  xl: 160px
+);
+
+
 $navItemWidth: 48px;
 
 $font-family-sans-serif:      'IBM Plex Sans', sans-serif;
-// $font-family-sans-serif:      'Turret Road', cursive;
-// $font-family-sans-serif:      'Mansalva', cursive;
+$font-family-serif:           'Spectral', serif;
 
 $font-weight-light:           300;
 $font-weight-normal:          400;

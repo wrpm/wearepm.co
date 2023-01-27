@@ -7,9 +7,11 @@
       <base-section-label
         ref="label"
         :label="overline"/>
+
       <base-section-title
         ref="title"
         :title="title" />
+
       <base-section-text
         ref="description"
         :text="text" />
@@ -44,7 +46,7 @@ export default {
 
   data: () => ({
     overline: 'What does WRPM do?',
-    title: 'Our Services & Capabilities',
+    title: 'Our Services <br><em>& Capabilities</em>',
     text:
       'Our talented creatives and developers come together to design and build consumer-facing digital solutions crafted to solve unique business challenges.'
   }),

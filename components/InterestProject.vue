@@ -1,30 +1,34 @@
 <template>
   <div class="interest-project">
+
     <span
       ref="index"
       class="index">
       {{ index + 1 | padNumber }}
     </span>
+
     <h3
       ref="title"
       class="title"
       v-html="title" />
+
     <p
       ref="text"
       class="text"
       v-html="text" />
+
     <nuxt-link
       ref="btn"
       :to="buttonOptions.to"
       :class="btnClass"
       class="btn"
       v-html="buttonOptions.label" />
+
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-// import { TimelineMax } from 'gsap'
 
 export default {
   name: 'InterestProject',
@@ -75,6 +79,8 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   height: 100%;
+  padding-top: 1rem;
+  border-top: 3px solid var(--body-color, $body-color);
 
   .index {
     display: block;
@@ -87,6 +93,7 @@ export default {
 
   .title {
     text-decoration: underline;
+    font-size: 2.5rem;
   }
 
   .text {

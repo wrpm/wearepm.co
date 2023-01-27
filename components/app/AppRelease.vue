@@ -19,10 +19,10 @@ export default {
       return process.env.version
     },
     year() {
-      return 2019
+      return 2021
     },
     month() {
-      return 'June'
+      return 'April'
     }
   },
 

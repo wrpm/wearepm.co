@@ -1,25 +1,21 @@
 <template>
   <section class="activities">
+
     <div class="wrapper">
       <h2
         ref="title"
         class="title">
-        <span class="line">Design.</span>
-        <span class="line text-primary">Development.</span>
+        <span class="line">Creativity + </span>
+        <span class="line text-primary">Technology</span>
       </h2>
     </div>
+
   </section>
 </template>
 
 <script>
-import { TimelineMax } from 'gsap'
-
 export default {
   name: 'Activities'
-
-  // data: () => ({}),
-  // mounted() {},
-  // methods: {}
 }
 </script>
 
@@ -46,7 +42,8 @@ export default {
       margin: 0;
       font-size: 12vw;
       font-weight: 500;
-      line-height: 1.2;
+      line-height: 1;
+      // text-transform: uppercase;
 
       @include media-breakpoint-up(md) {
         padding-top: 2rem;
@@ -57,12 +54,12 @@ export default {
       @include media-breakpoint-up(xl) {
         padding-top: 3rem;
         padding-bottom: 3rem;
-        font-size: 8rem;
+        font-size: 7.5rem;
       }
 
       span {
         display: block;
-        text-decoration: underline;
+        font-weight: 600;
 
         &.text-primary {
           color: var(--primary, $primary);

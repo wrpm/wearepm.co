@@ -1,6 +1,9 @@
 <template>
   <header class="app-header">
+    <div class="header__border" />
     <div class="header__wrapper">
+
+
 
       <div class="header__wrapper__logo">
         <AppLogo />
@@ -62,7 +65,19 @@ export default {
   @include media-breakpoint-up(md) {
     position: fixed;
     height: 100%;
-    padding: $app-padding-md;
+    padding: $app-padding;
+  }
+}
+
+.header__border {
+  @include media-breakpoint-up(md) {
+    position: fixed;
+    height: 100vh;
+    width: 1px;
+    top: 0;
+    left: 200px;
+    background: var(--body-color, $body-color);
+    opacity: 0.2;
   }
 }
 

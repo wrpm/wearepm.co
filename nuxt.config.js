@@ -28,12 +28,12 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
+      { rel: 'canonical', href: 'https://wearepm.co/' },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500&display=swap'
-        // href: 'https://fonts.googleapis.com/css?family=Turret+Road:300,400,500,700&display=swap'
-        // href: 'https://fonts.googleapis.com/css?family=Mansalva&display=swap'
+        href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=Spectral:ital,wght@1,300&display=swap'
       }
     ]
   },
@@ -92,7 +92,7 @@ module.exports = {
   build: {
 
     // extract css for production build
-    extractCSS: process.env.NODE_ENV === 'development' ? false : true,
+    extractCSS: process.env.NODE_ENV === 'development',
 
     optimization: {
       minimize: true,

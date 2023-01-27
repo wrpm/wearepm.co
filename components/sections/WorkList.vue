@@ -98,7 +98,7 @@ export default {
 
       .project-title {
         position: relative;
-        font-size: 4rem;
+        font-size: 6rem;
         font-weight: 600;
         line-height: 1.1;
         margin-bottom: 0.25rem;

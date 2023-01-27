@@ -27,9 +27,9 @@ export default {
 
   data: () => ({
     overline: 'Who we are?',
-    title: 'An Independent Creative Studio',
+    title: '<em>An Independent</em> <br>Web Development Agency',
     text:
-      "WRPM is a Belgrade based small creative studio focused on web design and web development. Although we are a young agency, between us we have 30+ years of experience. We approach every client’s project as if it is our own, striving to achieve memorable user experiences and long-lasting relationships."
+      "WRPM is a Belgrade based small creative agency focused on web design and web development. Although we are a young agency, between us we have 50+ years of experience. We approach every client’s project as if it is our own, striving to achieve memorable user experiences and long-lasting relationships."
   }),
 
   computed: {},

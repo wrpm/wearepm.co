@@ -15,7 +15,7 @@ import { mapState } from 'vuex'
 import _shuffle from 'lodash/shuffle'
 import ImageTrailImage from './ImageTrailImage'
 // import imagesData from '@/data/ImageTrail.json'
-import allTrailImages from '@/data/ImageTrail'
+import allTrailImages from '@/data/imageTrail'
 
 // helper functions
 const MathUtils = {

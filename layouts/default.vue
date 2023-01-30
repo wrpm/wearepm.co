@@ -5,6 +5,7 @@
 
     <AppHeader />
 
+    <!-- page -->
     <nuxt/>
 
   </div>
